@@ -16,6 +16,7 @@ public abstract class Main {
                 drawTriangleBotRight();
                 drawTriangleTopLeft();
                 drawTriangleTopRight();
+                drawIsoscelesTriangle();
                 break;
             case 2:
                 System.out.println("Vẽ hình vuông");
@@ -28,6 +29,20 @@ public abstract class Main {
             default:
                 System.out.println("Good bye!");
         }
+
+    }
+    public static void drawIsoscelesTriangle(){
+        int hight = 10, k = 0;
+        for (int i = 1; i <= hight; ++i, k = 0) {
+            for (int space = 1; space <= hight - i; ++space) {
+                System.out.print("  ");
+            }
+            while (k != 2 * i - 1) {
+                System.out.print("* ");
+                ++k;
+            }
+            System.out.println();
+        }
     }
 
 
@@ -39,6 +54,7 @@ public abstract class Main {
             System.out.println();
         }
     }
+
     public static void drawSquare() {
         for (byte i = 1; i <= 10; i++) {
             for (byte j = 1; j <= 10; j++) {
@@ -56,7 +72,8 @@ public abstract class Main {
             System.out.println();
         }
     }
-    public static void drawTriangleBotRight(){
+
+    public static void drawTriangleBotRight() {
         for (byte i = 1; i <= 10; i++) {
             for (byte j = 1; j <= 10; j++) {
                 if (j <= (10 - i)) {
