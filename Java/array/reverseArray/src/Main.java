@@ -8,10 +8,21 @@ public class Main {
         int[] arr = createArray();
         showArray(arr);
 
-        System.out.println(checkExistValue(arr, 5));
-        showExistValueIndex(arr, 5);
+
+        System.out.println(findMax(arr));
 
 
+    }
+
+
+    public static int findMax(int[] arr){
+        int max = arr[0];
+        for (int n : arr){
+            if (n > max){
+                max = n;
+            }
+        }
+        return max;
     }
 
     public static void showExistValueIndex(int[] arr, int num) {
