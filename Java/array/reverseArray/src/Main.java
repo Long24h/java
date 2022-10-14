@@ -8,34 +8,64 @@ public class Main {
         int[] arr = createArray();
         showArray(arr);
 
-
-        System.out.println(findMax(arr));
-        System.out.println(findMin(arr));
+        showExistElementIndex(arr, 5);
+        System.out.println(findExistElementLastIndex(arr, 5));
+        deleteLastIndexElement(arr, 5);
+        showArray(arr);
+        deleteElement(arr, 5);
+        showArray(arr);
 
 
     }
-    public static int findMin(int[] arr){
+    public static int[] deleteElement(int[] arr, int num){
+        while (findExistElementLastIndex(arr, 5) != -1){
+            deleteLastIndexElement( arr, 5);
+        }
+        return arr;
+    }
+    public static int[] deleteLastIndexElement(int[] arr, int num){
+        for (int i = findExistElementLastIndex(arr, num); i < arr.length-1; i++) {
+            int temp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temp;
+        }
+        arr[arr.length-1] = 0;
+        return arr;
+    }
+
+    public static int findMin(int[] arr) {
         int min = arr[0];
-        for (int n : arr){
-            if (n < min){
+        for (int n : arr) {
+            if (n < min) {
                 min = n;
             }
         }
         return min;
     }
 
-    public static int findMax(int[] arr){
+    public static int findMax(int[] arr) {
         int max = arr[0];
-        for (int n : arr){
-            if (n > max){
+        for (int n : arr) {
+            if (n > max) {
                 max = n;
             }
         }
         return max;
     }
+    public static int findExistElementLastIndex(int[] arr, int num) {
+        int index = -1;
+        if (checkExistElement(arr, num)) {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] == num) {
+                    index = i;
+                }
+            }
+        }
+        return index;
+    }
 
-    public static void showExistValueIndex(int[] arr, int num) {
-        if (checkExistValue(arr, num)) {
+    public static void showExistElementIndex(int[] arr, int num) {
+        if (checkExistElement(arr, num)) {
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] == num) {
                     System.out.println("Số " + num + " nằm ở index: " + i);
@@ -47,14 +77,14 @@ public class Main {
         }
     }
 
-    public static boolean checkExistValue(int[] arr, int num) {
+    public static boolean checkExistElement(int[] arr, int num) {
         boolean flag = true;
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == num) {
                 count++;
                 flag = true;
-            } else if (i == arr.length-1 && count == 0) {
+            } else if (i == arr.length - 1 && count == 0) {
                 flag = false;
             }
         }
@@ -87,8 +117,9 @@ public class Main {
         System.out.println("Nhập chiều dài mảng bạn muốn tạo!");
         int size = scanner.nextInt();
         int[] arr = new int[size];
+        int max = 5, min = 0;
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * 101);
+            arr[i] = (int) (Math.random() * (max - min + 1));
         }
         return arr;
     }
