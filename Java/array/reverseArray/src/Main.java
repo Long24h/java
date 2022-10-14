@@ -10,10 +10,19 @@ public class Main {
 
 
         System.out.println(findMax(arr));
+        System.out.println(findMin(arr));
 
 
     }
-
+    public static int findMin(int[] arr){
+        int min = arr[0];
+        for (int n : arr){
+            if (n < min){
+                min = n;
+            }
+        }
+        return min;
+    }
 
     public static int findMax(int[] arr){
         int max = arr[0];
