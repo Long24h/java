@@ -6,15 +6,38 @@ public class matrix2d {
     public static void main(String[] args) {
         int[][] arr = createArray();
         printArray(arr);
-        showSumEven(arr);
-        showSumDiagonal(arr);
-        showLeftTriangle(arr);
-        showRightTriangle(arr);
-        showSumRightTriangel(arr);
-        showLeftInvertedTriangle(arr);
-        showSumLeftInvertedTriangle(arr);
-        showBorder(arr);
+//        showSumEven(arr);
+//        showSumDiagonal(arr);
+//        showLeftTriangle(arr);
+//        showRightTriangle(arr);
+//        showSumRightTriangel(arr);
+//        showLeftInvertedTriangle(arr);
+//        showSumLeftInvertedTriangle(arr);
+//        showBorder(arr);
 
+        showAppearTime(arr);
+
+    }
+    public static void showAppearTime(int[][] arr){
+        int count = findNumberInArray(arr);
+        if (count ==0){
+            System.out.println("Số cần tìm không xuất hiện trong mảng!");
+        } else {
+            System.out.printf("Số cần tìm xuất hiện trong mảng %d lần!", count);
+        }
+    }
+    public static int findNumberInArray(int[][] arr){
+        System.out.println("Nhập số cần tìm trong mảng:");
+        int number = scanner.nextInt();
+        int count = 0;
+        for (int[] x: arr) {
+            for (int y : x) {
+                if(y == number){
+                    count++;
+                }
+            }
+        }
+        return count;
     }
     public static void showBorder(int[][] arr){
         System.out.println("Các số nằm trên đường viền của ma trận: \n" + makeBorder(arr));
