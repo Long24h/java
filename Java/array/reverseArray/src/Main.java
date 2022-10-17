@@ -5,15 +5,14 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello world from MT!");
-        int[] arr = createArray();
-        showArray(arr);
+//        int[] arr = createArray();
+//        showArray(arr);
 
-        showExistElementIndex(arr, 5);
-        System.out.println(findExistElementLastIndex(arr, 5));
-        deleteLastIndexElement(arr, 5);
-        showArray(arr);
-        deleteElement(arr, 5);
-        showArray(arr);
+        int[] emptyArr = createEmptyArray();
+        showArray(emptyArr);
+        System.out.println("Nhập vị trí bạn cần chèn:");
+        int index = scanner.nextInt();
+
 
 
     }
@@ -121,6 +120,12 @@ public class Main {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * (max - min + 1));
         }
+        return arr;
+    }
+    public static int[] createEmptyArray() {
+        System.out.println("Nhập chiều dài mảng bạn muốn tạo!");
+        int size = scanner.nextInt();
+        int[] arr = new int[size];
         return arr;
     }
 }
