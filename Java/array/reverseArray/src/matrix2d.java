@@ -14,9 +14,24 @@ public class matrix2d {
 //        showLeftInvertedTriangle(arr);
 //        showSumLeftInvertedTriangle(arr);
 //        showBorder(arr);
-
-        showAppearTime(arr);
-
+//        showAppearTime(arr);
+//        showSumColumn(arr);
+    }
+    public static void showSumColumn(int[][] arr){
+        System.out.println(getSumColumn(arr));
+    }
+    public static int getSumColumn(int[][] arr){
+        System.out.println("Nhập số cột bạn muốn tính tổng:");
+        int col = scanner.nextInt();
+        int sumCol = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (j==col-1){
+                    sumCol += arr[i][j];
+                }
+            }
+        }
+        return sumCol;
     }
     public static void showAppearTime(int[][] arr){
         int count = findNumberInArray(arr);
