@@ -16,6 +16,23 @@ public class matrix2d {
 //        showBorder(arr);
 //        showAppearTime(arr);
 //        showSumColumn(arr);
+
+        findMax(arr);
+
+    }
+    public static void findMax(int[][] arr){
+        int max = arr[0][0];
+        int indexI =0, indexJ = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (arr[i][j]>max){
+                    max = arr[i][j];
+                    indexI = i;
+                    indexJ = j;
+                }
+            }
+        }
+        System.out.printf("Giá trị lớn nhất trong mảng là: %d, tại index[%d, %d]", max ,indexI , indexJ);
     }
     public static void showSumColumn(int[][] arr){
         System.out.println(getSumColumn(arr));
