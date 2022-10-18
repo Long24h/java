@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -5,16 +6,31 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello world from MT!");
-//        int[] arr = createArray();
+        int[] arr = createArray();
 //        showArray(arr);
 
-        int[] emptyArr = createEmptyArray();
-        showArray(emptyArr);
+//        int[] emptyArr = createEmptyArray();
+        showArray(arr);
+        int[] arr1 = insertNumber(arr);
+        showArray(arr1);
+
+
+
+    }
+    public static int[] insertNumber(int[] arr){
+        System.out.println("Nhập giá trị bạn muốn chèn vào:");
+        int number = scanner.nextInt();
         System.out.println("Nhập vị trí bạn cần chèn:");
         int index = scanner.nextInt();
-
-
-
+        int [] newArray = Arrays.copyOf(arr, arr.length+1);
+        for (int i = index; i < newArray.length; i++) {
+            if (i == index) {
+                newArray[i] = number;
+            } else {
+                newArray[i] = arr[i-1];
+            }
+        }
+        return newArray;
     }
     public static int[] deleteElement(int[] arr, int num){
         while (findExistElementLastIndex(arr, 5) != -1){
