@@ -3,6 +3,27 @@ import java.util.Scanner;
 public class ConvertTemperature {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        int choose;
+        do {
+            System.out.println("Chọn nhiệt độ muốn quy đổi:");
+            System.out.println("1. Đổi từ độ C sang độ F:");
+            System.out.println("2. Đổi từ độ F sang độ C:");
+            choose = scanner.nextInt();
+            switch (choose){
+                case 1:
+                    convertCelsiusToFahrenheit();
+                    break;
+                case 2:
+                    convertFahrenheitToCelsius();
+                    break;
+                case 0:
+                    System.exit(0);
+                default:
+                    System.exit(0);
+            }
+        }while(choose != 0);
+
+
 
 
 
