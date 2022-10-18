@@ -6,45 +6,58 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello world from MT!");
-        int[] arr = createArray();
-//        showArray(arr);
 
-//        int[] emptyArr = createEmptyArray();
-        showArray(arr);
-        int[] arr1 = insertNumber(arr);
-        showArray(arr1);
 
+        showArray(concatenateArray());
 
 
     }
-    public static int[] insertNumber(int[] arr){
+
+    public static int[] concatenateArray() {
+        System.out.println("Tạo mảng thứ nhất!");
+        int[] arr1 = createArray();
+        showArray(arr1);
+        System.out.println("Tạo mảng thứ hai!");
+        int[] arr2 = createArray();
+        showArray(arr2);
+        System.out.println("Tạo mảng trống thứ ba!");
+        int[] arr3 = Arrays.copyOf(arr1, arr1.length + arr2.length);
+        for (int i = arr1.length; i < arr3.length; i++) {
+            arr3[i] = arr2[i - arr1.length];
+        }
+        return arr3;
+    }
+
+    public static int[] insertNumber(int[] arr) {
         System.out.println("Nhập giá trị bạn muốn chèn vào:");
         int number = scanner.nextInt();
         System.out.println("Nhập vị trí bạn cần chèn:");
         int index = scanner.nextInt();
-        int [] newArray = Arrays.copyOf(arr, arr.length+1);
+        int[] newArray = Arrays.copyOf(arr, arr.length + 1);
         for (int i = index; i < newArray.length; i++) {
             if (i == index) {
                 newArray[i] = number;
             } else {
-                newArray[i] = arr[i-1];
+                newArray[i] = arr[i - 1];
             }
         }
         return newArray;
     }
-    public static int[] deleteElement(int[] arr, int num){
-        while (findExistElementLastIndex(arr, 5) != -1){
-            deleteLastIndexElement( arr, 5);
+
+    public static int[] deleteElement(int[] arr, int num) {
+        while (findExistElementLastIndex(arr, 5) != -1) {
+            deleteLastIndexElement(arr, 5);
         }
         return arr;
     }
-    public static int[] deleteLastIndexElement(int[] arr, int num){
-        for (int i = findExistElementLastIndex(arr, num); i < arr.length-1; i++) {
+
+    public static int[] deleteLastIndexElement(int[] arr, int num) {
+        for (int i = findExistElementLastIndex(arr, num); i < arr.length - 1; i++) {
             int temp = arr[i];
-            arr[i] = arr[i+1];
-            arr[i+1] = temp;
+            arr[i] = arr[i + 1];
+            arr[i + 1] = temp;
         }
-        arr[arr.length-1] = 0;
+        arr[arr.length - 1] = 0;
         return arr;
     }
 
@@ -67,6 +80,7 @@ public class Main {
         }
         return max;
     }
+
     public static int findExistElementLastIndex(int[] arr, int num) {
         int index = -1;
         if (checkExistElement(arr, num)) {
@@ -132,12 +146,12 @@ public class Main {
         System.out.println("Nhập chiều dài mảng bạn muốn tạo!");
         int size = scanner.nextInt();
         int[] arr = new int[size];
-        int max = 5, min = 0;
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * (max - min + 1));
+            arr[i] = (int) (Math.random() * (10 + 1));
         }
         return arr;
     }
+
     public static int[] createEmptyArray() {
         System.out.println("Nhập chiều dài mảng bạn muốn tạo!");
         int size = scanner.nextInt();
