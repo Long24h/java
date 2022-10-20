@@ -1,5 +1,5 @@
 public class QuadraticEquation {
-    private double a, b, c;
+    private static double a, b, c;
 
     public QuadraticEquation() {
 
@@ -54,5 +54,9 @@ public class QuadraticEquation {
         } else {
             System.out.println("Phương trình có hai nghiệm x1 = " + getRoot1() + ", x2 = " + getRoot2());
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 }

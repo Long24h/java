@@ -12,13 +12,17 @@ public class Main {
 //        Rectangle rectangle1 = new Rectangle(width, height);
 //        rectangle1.display();
 
-        System.out.println("Nhập hệ số a:");
-        double a = scanner.nextDouble();
-        System.out.println("Nhập hệ số b:");
-        double b = scanner.nextDouble();
-        System.out.println("Nhập hệ số c:");
-        double c = scanner.nextDouble();
-        QuadraticEquation quadraticEquation = new QuadraticEquation(a, b, c);
-        quadraticEquation.showResult();
+//        System.out.println("Nhập hệ số a:");
+//        double a = scanner.nextDouble();
+//        System.out.println("Nhập hệ số b:");
+//        double b = scanner.nextDouble();
+//        System.out.println("Nhập hệ số c:");
+//        double c = scanner.nextDouble();
+//        QuadraticEquation quadraticEquation = new QuadraticEquation(a, b, c);
+//        quadraticEquation.showResult();
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.runStopWatch();
+
+
     }
 }
