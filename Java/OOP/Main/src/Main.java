@@ -20,8 +20,18 @@ public class Main {
 //        double c = scanner.nextDouble();
 //        QuadraticEquation quadraticEquation = new QuadraticEquation(a, b, c);
 //        quadraticEquation.showResult();
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.runStopWatch();
+//        StopWatch stopWatch = new StopWatch();
+//        stopWatch.runStopWatch();
+
+        StaticMethod student1 = new StaticMethod("chicken");
+        StaticMethod student2 = new StaticMethod("duck");
+        StaticMethod student3 = new StaticMethod("bird");
+
+        student1.display();
+        student2.display();
+
+        StaticMethod.change();
+        student3.display();
 
 
     }
