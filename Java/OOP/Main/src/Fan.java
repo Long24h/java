@@ -50,6 +50,18 @@ public class Fan {
         this.color = color;
     }
 
+    public String toString() {
+        String str = (this.isOn == true) ?
+                "Speed " + getSpeed() + " color: " + getColor() + " radius: " + (int)getRadius() + " fan is on!" :
+                "Color: " + getColor() + " radius: " + (int)getRadius() + " fan is off";
+//        if (this.isOn == true){
+//            str += getSpeed()+"\t"+getColor()+"\t"+getRadius()+"fan is on";
+//        } else {
+//            str+=getColor()+"\t"+getRadius()+"\tfan is off";
+//        }
+        return str;
+    }
+
     public static void main(String[] args) {
 
     }

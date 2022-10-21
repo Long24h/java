@@ -23,15 +23,18 @@ public class Main {
 //        StopWatch stopWatch = new StopWatch();
 //        stopWatch.runStopWatch();
 
-        StaticMethod student1 = new StaticMethod("chicken");
-        StaticMethod student2 = new StaticMethod("duck");
-        StaticMethod student3 = new StaticMethod("bird");
+//        StaticMethod student1 = new StaticMethod("chicken");
+//        StaticMethod student2 = new StaticMethod("duck");
+//        StaticMethod student3 = new StaticMethod("bird");
+//
+//        student1.display();
+//        student2.display();
+//
+//        StaticMethod.change();
+//        student3.display();
 
-        student1.display();
-        student2.display();
-
-        StaticMethod.change();
-        student3.display();
+        Fan fan1 = new Fan( 3, true, 7, "yellow");
+        System.out.println(fan1.toString());
 
 
     }
