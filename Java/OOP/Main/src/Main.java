@@ -33,8 +33,13 @@ public class Main {
 //        StaticMethod.change();
 //        student3.display();
 
-        Fan fan1 = new Fan( 3, true, 7, "yellow");
-        System.out.println(fan1.toString());
+//        Fan fan1 = new Fan( 3, true, 7, "yellow");
+//        System.out.println(fan1.toString());
+
+        Car car1 = new Car("Lambo", "Diezel");
+        System.out.println(car1.numberOfCar);
+        Car car2 = new Car("BMW", "Electric");
+        System.out.println(car2.numberOfCar);
 
 
     }
