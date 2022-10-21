@@ -36,10 +36,16 @@ public class Main {
 //        Fan fan1 = new Fan( 3, true, 7, "yellow");
 //        System.out.println(fan1.toString());
 
-        Car car1 = new Car("Lambo", "Diezel");
-        System.out.println(car1.numberOfCar);
-        Car car2 = new Car("BMW", "Electric");
-        System.out.println(car2.numberOfCar);
+//        Car car1 = new Car("Lambo", "Diezel");
+//        System.out.println(car1.numberOfCar);
+//        Car car2 = new Car("BMW", "Electric");
+//        System.out.println(car2.numberOfCar);
+
+        Student std1 = new Student();
+        std1.setName("Leesin");
+        std1.setClasses("C0822G1");
+        System.out.println(std1.getName());
+        System.out.println(std1.getClasses());
 
 
     }
