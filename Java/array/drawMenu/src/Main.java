@@ -58,7 +58,7 @@ public abstract class Main {
     public static void drawSquare() {
         for (byte i = 1; i <= 10; i++) {
             for (byte j = 1; j <= 10; j++) {
-                System.out.print("*");
+                System.out.print("* ");
             }
             System.out.println();
         }
