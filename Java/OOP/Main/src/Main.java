@@ -88,5 +88,17 @@ public class Main {
         point3d.printCoordinate();
         System.out.println(point3d.toString());
 
+        MovablePoint p1 = new MovablePoint(1, 1, 1, 1);
+        System.out.println(p1.toString());
+        System.out.println(p1.move());
+        System.out.println(p1.move());
+        System.out.println(p1.move());
+
+        MovablePoint p2 = new MovablePoint(0, 0, 2, 3);
+        System.out.println(p2.toString());
+        System.out.println(p2.move());
+        System.out.println(p2.move());
+        System.out.println(p2.move());
+
     }
 }
