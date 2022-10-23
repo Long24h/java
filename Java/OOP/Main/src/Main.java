@@ -81,24 +81,30 @@ public class Main {
 //        System.out.println(cyl.toString());
 //        System.out.println(cyl.getColor());
 
-        Point2d point2d = new Point2d(7, 11);
-        System.out.println(point2d.toString());
+//        Point2d point2d = new Point2d(7, 11);
+//        System.out.println(point2d.toString());
+//
+//        Point3d point3d = new Point3d(4, 1, 8);
+//        point3d.printCoordinate();
+//        System.out.println(point3d.toString());
+//
+//        MovablePoint p1 = new MovablePoint(1, 1, 1, 1);
+//        System.out.println(p1.toString());
+//        System.out.println(p1.move());
+//        System.out.println(p1.move());
+//        System.out.println(p1.move());
+//
+//        MovablePoint p2 = new MovablePoint(0, 0, 2, 3);
+//        System.out.println(p2.toString());
+//        System.out.println(p2.move());
+//        System.out.println(p2.move());
+//        System.out.println(p2.move());
 
-        Point3d point3d = new Point3d(4, 1, 8);
-        point3d.printCoordinate();
-        System.out.println(point3d.toString());
+        Triangle tri = new Triangle("grey", false, 3, 4, 3);
+        System.out.println(tri.toString());
 
-        MovablePoint p1 = new MovablePoint(1, 1, 1, 1);
-        System.out.println(p1.toString());
-        System.out.println(p1.move());
-        System.out.println(p1.move());
-        System.out.println(p1.move());
-
-        MovablePoint p2 = new MovablePoint(0, 0, 2, 3);
-        System.out.println(p2.toString());
-        System.out.println(p2.move());
-        System.out.println(p2.move());
-        System.out.println(p2.move());
+        Triangle tri1 = new Triangle("black", true, 3, 4, 5);
+        System.out.println(tri1.toString());
 
     }
 }
