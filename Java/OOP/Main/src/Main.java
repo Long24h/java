@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -69,16 +70,23 @@ public class Main {
 //        System.out.println(rec1.toString());
 //        System.out.println(rec1.getColor());
 
-        Square square = new Square("pink", false, 9);
-        System.out.println(square.getArea());
-        System.out.println(square.getPerimeter());
-        System.out.println(square.toString());
-        System.out.println(square.getColor());
+//        Square square = new Square("pink", false, 9);
+//        System.out.println(square.getArea());
+//        System.out.println(square.getPerimeter());
+//        System.out.println(square.toString());
+//        System.out.println(square.getColor());
+//
+//        Cylinder cyl = new Cylinder("purple", true, 13, 17);
+//        System.out.println(cyl.getArea());
+//        System.out.println(cyl.toString());
+//        System.out.println(cyl.getColor());
 
-        Cylinder cyl = new Cylinder("purple", true, 13, 17);
-        System.out.println(cyl.getArea());
-        System.out.println(cyl.toString());
-        System.out.println(cyl.getColor());
+        Point2d point2d = new Point2d(7, 11);
+        System.out.println(point2d.toString());
+
+        Point3d point3d = new Point3d(4, 1, 8);
+        point3d.printCoordinate();
+        System.out.println(point3d.toString());
 
     }
 }
