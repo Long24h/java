@@ -1,4 +1,5 @@
 import myinterfaces.Comparable;
+
 public class Circle extends Shape implements Comparable {
     private double radius = 1.0;
 
@@ -56,10 +57,18 @@ public class Circle extends Shape implements Comparable {
         return "Radius = " + radius + ", area = " + getArea();
     }
 
-//    @Override
+    //    @Override
     public int compareTo(Object Circle) {
         Circle c1 = (Circle) Circle;
         if (this.getRadius() >= c1.getRadius()) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
+    public static int compareTwo(Circle C1, Circle C2) {
+        if (C1.getRadius() >= C2.getRadius()) {
             return 1;
         } else {
             return -1;

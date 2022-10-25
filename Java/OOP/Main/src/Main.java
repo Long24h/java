@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
@@ -118,24 +119,33 @@ public class Main {
 
         sort(circles);
         System.out.println(Arrays.toString(circles));
-        
-        RectangleShape[] rec = new RectangleShape[5];
-        rec[0] = new RectangleShape(4, 9);
-        rec[1] = new RectangleShape(25, 27);
-        rec[2] = new RectangleShape(33, 2);
-        rec[3] = new RectangleShape(74, 27);
-        rec[4] = new RectangleShape(15, 15);
-        sortAll(rec);
-        System.out.println(Arrays.toString(rec));
-        
+        System.out.println();
+        Circle[] c1 = new Circle[5];
+        c1[0] = new Circle(29);
+        c1[1] = new Circle(35);
+        c1[2] = new Circle(26);
+        c1[3] = new Circle(14);
+        c1[4] = new Circle(37);
+        sortByCompareTwo(c1);
+        System.out.println(Arrays.toString(c1));
+
+//        RectangleShape[] rec = new RectangleShape[5];
+//        rec[0] = new RectangleShape(4, 9);
+//        rec[1] = new RectangleShape(25, 27);
+//        rec[2] = new RectangleShape(33, 2);
+//        rec[3] = new RectangleShape(74, 27);
+//        rec[4] = new RectangleShape(15, 15);
+//        sortAll(rec);
+//        System.out.println(Arrays.toString(rec));
 
 
     }
-    public static void sort(Circle[] circles){
-        for (int i = 0; i < circles.length-1; i++) {
-            for (int j = i+1; j < circles.length; j++) {
+
+    public static void sort(Circle[] circles) {
+        for (int i = 0; i < circles.length - 1; i++) {
+            for (int j = i + 1; j < circles.length; j++) {
                 Comparable circle = (Comparable) circles[i];
-                if(circle.compareTo(circles[j])==1){
+                if (circle.compareTo(circles[j]) == 1) {
                     Circle temp = circles[i];
                     circles[i] = circles[j];
                     circles[j] = temp;
@@ -144,17 +154,31 @@ public class Main {
         }
 
     }
-    public static void sortAll(Object[] obj){
+
+    public static void sortAll(Object[] obj) {
         for (int i = 0; i < obj.length - 1; i++) {
             for (int j = i + 1; j < obj.length; j++) {
                 Comparable obj1 = (Comparable) obj[i];
-                if (obj1.compareTo(obj[j]) == 1){
+                if (obj1.compareTo(obj[j]) == 1) {
                     Object temp = obj[i];
                     obj[i] = obj[j];
                     obj[j] = temp;
                 }
             }
-            
+
         }
     }
+
+    public static void sortByCompareTwo(Circle[] circles) {
+        for (int i = 0; i < circles.length - 1; i++) {
+            for (int j = i + 1; j < circles.length; j++) {
+                if (Circle.compareTwo(circles[i], circles[j]) == 1){
+                    Circle temp = circles[i];
+                    circles[i] = circles[j];
+                    circles[j] = temp;
+                }
+            }
+        }
+    }
+
 }
