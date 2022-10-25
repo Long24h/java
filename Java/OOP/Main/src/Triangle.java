@@ -57,4 +57,12 @@ public class Triangle extends Shape {
                 + ", and area = " + getArea() + ". Color: " + getColor()
                 + ", and " + (isFilled() ? "filled" : "no filled.");
     }
+    public int compareTo(Object triangle) {
+        Triangle c1 = (Triangle) triangle;
+        if (this.getArea() >= c1.getArea()) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
 }

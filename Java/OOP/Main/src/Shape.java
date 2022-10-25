@@ -1,4 +1,5 @@
-public class Shape {
+import myinterfaces.Comparable;
+public abstract class Shape implements Comparable{
     private String color = "green";
     private boolean filled = true;
     public Shape(){
@@ -21,7 +22,7 @@ public class Shape {
     public boolean isFilled() {
         return filled;
     }
-    @Override
+//    @Override
     public String toString(){
         return "A shape with color of " + color + " and " + (isFilled() ? "filled" : "not filled");
     }

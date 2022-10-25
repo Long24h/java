@@ -1,3 +1,4 @@
+import myinterfaces.Comparable;
 public class Square extends RectangleShape {
     //    private double size = 1.0;
     public Square() {

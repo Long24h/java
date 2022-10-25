@@ -1,3 +1,4 @@
+import myinterfaces.Comparable;
 public class RectangleShape extends Shape {
     private double width = 1.0, height = 1.0;
 
@@ -46,7 +47,15 @@ public class RectangleShape extends Shape {
 
     @Override
     public String toString() {
-        return "A rectangle with width = " + width + ", and height = " + height + ", which is a subclass of "
-                + super.toString();
+        return "A rectangle with width = " + width + ", and height = " + height + ", area = "
+                + getArea();
+    }
+    public int compareTo(Object Rectangle) {
+        RectangleShape rec = (RectangleShape) Rectangle;
+        if (this.getArea() >= rec.getArea()) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 }

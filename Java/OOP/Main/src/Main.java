@@ -1,3 +1,6 @@
+import myinterfaces.Comparable;
+
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -100,11 +103,58 @@ public class Main {
 //        System.out.println(p2.move());
 //        System.out.println(p2.move());
 
-        Triangle tri = new Triangle("grey", false, 3, 4, 3);
-        System.out.println(tri.toString());
+//        Triangle tri = new Triangle("grey", false, 3, 4, 3);
+//        System.out.println(tri.toString());
+//
+//        Triangle tri1 = new Triangle("black", true, 3, 4, 5);
+//        System.out.println(tri1.toString());
 
-        Triangle tri1 = new Triangle("black", true, 3, 4, 5);
-        System.out.println(tri1.toString());
+        Circle[] circles = new Circle[5];
+        circles[0] = new Circle(5);
+        circles[1] = new Circle(11);
+        circles[2] = new Circle(4);
+        circles[3] = new Circle(19);
+        circles[4] = new Circle(12);
 
+        sort(circles);
+        System.out.println(Arrays.toString(circles));
+        
+        RectangleShape[] rec = new RectangleShape[5];
+        rec[0] = new RectangleShape(4, 9);
+        rec[1] = new RectangleShape(25, 27);
+        rec[2] = new RectangleShape(33, 2);
+        rec[3] = new RectangleShape(74, 27);
+        rec[4] = new RectangleShape(15, 15);
+        sortAll(rec);
+        System.out.println(Arrays.toString(rec));
+        
+
+
+    }
+    public static void sort(Circle[] circles){
+        for (int i = 0; i < circles.length-1; i++) {
+            for (int j = i+1; j < circles.length; j++) {
+                Comparable circle = (Comparable) circles[i];
+                if(circle.compareTo(circles[j])==1){
+                    Circle temp = circles[i];
+                    circles[i] = circles[j];
+                    circles[j] = temp;
+                }
+            }
+        }
+
+    }
+    public static void sortAll(Object[] obj){
+        for (int i = 0; i < obj.length - 1; i++) {
+            for (int j = i + 1; j < obj.length; j++) {
+                Comparable obj1 = (Comparable) obj[i];
+                if (obj1.compareTo(obj[j]) == 1){
+                    Object temp = obj[i];
+                    obj[i] = obj[j];
+                    obj[j] = temp;
+                }
+            }
+            
+        }
     }
 }
