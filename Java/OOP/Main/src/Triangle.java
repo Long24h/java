@@ -1,3 +1,4 @@
+import myinterfaces.*;
 public class Triangle extends Shape {
     private double side1 = 1.0, side2 = 1.0, side3 = 1.0;
 
@@ -64,5 +65,12 @@ public class Triangle extends Shape {
         } else {
             return -1;
         }
+    }
+
+    @Override
+    public void resize(double percent) {
+        setSide1(getSide1()*(1+ percent));
+        setSide2(getSide2()*(1+ percent));
+        setSide3(getSide3()*(1+ percent));
     }
 }

@@ -110,24 +110,24 @@ public class Main {
 //        Triangle tri1 = new Triangle("black", true, 3, 4, 5);
 //        System.out.println(tri1.toString());
 
-        Circle[] circles = new Circle[5];
-        circles[0] = new Circle(5);
-        circles[1] = new Circle(11);
-        circles[2] = new Circle(4);
-        circles[3] = new Circle(19);
-        circles[4] = new Circle(12);
-
-        sort(circles);
-        System.out.println(Arrays.toString(circles));
-        System.out.println();
-        Circle[] c1 = new Circle[5];
-        c1[0] = new Circle(29);
-        c1[1] = new Circle(35);
-        c1[2] = new Circle(26);
-        c1[3] = new Circle(14);
-        c1[4] = new Circle(37);
-        sortByCompareTwo(c1);
-        System.out.println(Arrays.toString(c1));
+//        Circle[] circles = new Circle[5];
+//        circles[0] = new Circle(5);
+//        circles[1] = new Circle(11);
+//        circles[2] = new Circle(4);
+//        circles[3] = new Circle(19);
+//        circles[4] = new Circle(12);
+//
+//        sort(circles);
+//        System.out.println(Arrays.toString(circles));
+//        System.out.println();
+//        Circle[] c1 = new Circle[5];
+//        c1[0] = new Circle(29);
+//        c1[1] = new Circle(35);
+//        c1[2] = new Circle(26);
+//        c1[3] = new Circle(14);
+//        c1[4] = new Circle(37);
+//        sortByCompareTwo(c1);
+//        System.out.println(Arrays.toString(c1));
 
 //        RectangleShape[] rec = new RectangleShape[5];
 //        rec[0] = new RectangleShape(4, 9);
@@ -137,6 +137,24 @@ public class Main {
 //        rec[4] = new RectangleShape(15, 15);
 //        sortAll(rec);
 //        System.out.println(Arrays.toString(rec));
+
+        RectangleShape rec = new RectangleShape(5, 9);
+        System.out.println(rec.toString());
+        rec.resize(0.2);
+        System.out.println(rec.toString());
+        Triangle tri = new Triangle(4, 9, 10);
+        System.out.println(tri.toString());
+        tri.resize(0.2);
+        System.out.println(tri.toString());
+        Circle cir = new Circle(10);
+        System.out.println(cir.toString());
+        cir.resize(0.2);
+        System.out.println(cir.toString());
+        Square sq = new Square( 11);
+        System.out.println(sq.toString());
+        sq.resize(0.2);
+        System.out.println(sq.toString());
+
 
 
     }

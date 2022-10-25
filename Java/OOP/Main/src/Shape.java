@@ -1,5 +1,7 @@
 import myinterfaces.Comparable;
-public abstract class Shape implements Comparable{
+import myinterfaces.Resizeable;
+
+public abstract class Shape implements Comparable, Resizeable {
     private String color = "green";
     private boolean filled = true;
     public Shape(){

@@ -22,17 +22,22 @@ public class Square extends RectangleShape {
         setHeight(size);
     }
 
-    public void setWidth(double size) {
-        setWidth(size);
-        setHeight(size);
-    }
+//    public void setWidth(double size) {
+//        setWidth(size);
+//        setHeight(size);
+//    }
 
-    public void setHeight(double size) {
-        setHeight(size);
-    }
+//    public void setHeight(double size) {
+//        setHeight(size);
+//    }
 
     @Override
     public String toString() {
         return "A square with size = " + getSize() + ", which is a subclass of " + super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        super.resize(percent);
     }
 }

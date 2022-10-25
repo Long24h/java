@@ -1,3 +1,4 @@
+import myinterfaces.*;
 import myinterfaces.Comparable;
 
 public class Circle extends Shape implements Comparable {
@@ -73,5 +74,10 @@ public class Circle extends Shape implements Comparable {
         } else {
             return -1;
         }
+    }
+
+    @Override
+    public void resize(double percent) {
+        setRadius(getRadius()*(1+ percent));
     }
 }

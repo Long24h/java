@@ -1,4 +1,4 @@
-import myinterfaces.Comparable;
+import myinterfaces.*;
 public class RectangleShape extends Shape {
     private double width = 1.0, height = 1.0;
 
@@ -57,5 +57,9 @@ public class RectangleShape extends Shape {
         } else {
             return -1;
         }
+    }
+    public void resize(double percent){
+        this.setHeight(this.getHeight()*(1+ percent));
+        this.setWidth(this.getWidth()*(1+ percent));
     }
 }
