@@ -28,4 +28,5 @@ public abstract class Shape implements Comparable, Resizeable {
     public String toString(){
         return "A shape with color of " + color + " and " + (isFilled() ? "filled" : "not filled");
     }
+    public abstract double getArea();
 }

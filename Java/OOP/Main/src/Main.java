@@ -138,22 +138,36 @@ public class Main {
 //        sortAll(rec);
 //        System.out.println(Arrays.toString(rec));
 
-        RectangleShape rec = new RectangleShape(5, 9);
-        System.out.println(rec.toString());
-        rec.resize(0.2);
-        System.out.println(rec.toString());
-        Triangle tri = new Triangle(4, 9, 10);
-        System.out.println(tri.toString());
-        tri.resize(0.2);
-        System.out.println(tri.toString());
-        Circle cir = new Circle(10);
-        System.out.println(cir.toString());
-        cir.resize(0.2);
-        System.out.println(cir.toString());
-        Square sq = new Square( 11);
-        System.out.println(sq.toString());
-        sq.resize(0.2);
-        System.out.println(sq.toString());
+//        RectangleShape rec = new RectangleShape(5, 9);
+//        System.out.println(rec.toString());
+//        rec.resize(0.2);
+//        System.out.println(rec.toString());
+//        Triangle tri = new Triangle(4, 9, 10);
+//        System.out.println(tri.toString());
+//        tri.resize(0.2);
+//        System.out.println(tri.toString());
+//        Circle cir = new Circle(10);
+//        System.out.println(cir.toString());
+//        cir.resize(0.2);
+//        System.out.println(cir.toString());
+//        Square sq = new Square( 11);
+//        System.out.println(sq.toString());
+//        sq.resize(0.2);
+//        System.out.println(sq.toString());
+
+        Shape[] shapes = new Shape[5];
+        shapes[0] = new Square(8);
+        shapes[1] = new Circle(13);
+        shapes[2] = new Triangle(8, 6, 10);
+        shapes[3] = new Square(11);
+        shapes[4] = new RectangleShape(34, 27);
+        for (Shape shape : shapes) {
+            if (shape instanceof Square) {
+                ((Square) shape).howToColor();
+            } else {
+                System.out.println(shape.toString());
+            }
+        }
 
 
 

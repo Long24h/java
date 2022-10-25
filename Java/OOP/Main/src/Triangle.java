@@ -44,12 +44,12 @@ public class Triangle extends Shape {
     }
 
     public double getPerimeter() {
-        return getSide1() + getSide2() + getSide3();
+        return (getSide1() + getSide2() + getSide3());
     }
 
     public double getArea() {
         double p = getPerimeter() / 2;
-        return Math.sqrt(p * (p - getSide1()) * (p - getSide2()) * (p - getSide3()));
+        return Math.sqrt(Math.abs(p*(p - getSide1())*(p - getSide2())*(p - getSide3())));
     }
     @Override
     public String toString(){
@@ -72,5 +72,12 @@ public class Triangle extends Shape {
         setSide1(getSide1()*(1+ percent));
         setSide2(getSide2()*(1+ percent));
         setSide3(getSide3()*(1+ percent));
+    }
+
+    public static void main(String[] args) {
+        Triangle tri = new Triangle(3, 4, 5);
+        System.out.println(tri.getPerimeter());
+        System.out.println(tri.getArea());
+        System.out.println(tri.toString());
     }
 }

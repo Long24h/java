@@ -1,5 +1,5 @@
-import myinterfaces.Comparable;
-public class Square extends RectangleShape {
+import myinterfaces.*;
+public class Square extends RectangleShape implements Colorable{
     //    private double size = 1.0;
     public Square() {
 
@@ -22,15 +22,6 @@ public class Square extends RectangleShape {
         setHeight(size);
     }
 
-//    public void setWidth(double size) {
-//        setWidth(size);
-//        setHeight(size);
-//    }
-
-//    public void setHeight(double size) {
-//        setHeight(size);
-//    }
-
     @Override
     public String toString() {
         return "A square with size = " + getSize() + ", which is a subclass of " + super.toString();
@@ -39,5 +30,10 @@ public class Square extends RectangleShape {
     @Override
     public void resize(double percent) {
         super.resize(percent);
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four side!");
     }
 }
