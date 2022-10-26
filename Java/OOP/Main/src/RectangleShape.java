@@ -62,4 +62,8 @@ public class RectangleShape extends Shape {
         this.setHeight(this.getHeight()*(1+ percent));
         this.setWidth(this.getWidth()*(1+ percent));
     }
+
+    public void howToColor() {
+        System.out.println("Color all rectangle four side!");
+    }
 }

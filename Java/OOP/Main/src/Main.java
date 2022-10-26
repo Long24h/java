@@ -155,22 +155,39 @@ public class Main {
 //        sq.resize(0.2);
 //        System.out.println(sq.toString());
 
-        Shape[] shapes = new Shape[5];
-        shapes[0] = new Square(8);
-        shapes[1] = new Circle(13);
-        shapes[2] = new Triangle(8, 6, 10);
-        shapes[3] = new Square(11);
-        shapes[4] = new RectangleShape(34, 27);
-        for (Shape shape : shapes) {
-            if (shape instanceof Square) {
-                ((Square) shape).howToColor();
-            } else {
-                System.out.println(shape.toString());
-            }
-        }
+//        Shape[] shapes = new Shape[5];
+//        shapes[0] = new Square(8);
+//        shapes[1] = new Circle(13);
+//        shapes[2] = new Triangle(8, 6, 10);
+//        shapes[3] = new Square(11);
+//        shapes[4] = new RectangleShape(34, 27);
+//        for (Shape shape : shapes) {
+//            if (shape instanceof RectangleShape) {
+//                ((RectangleShape) shape).howToColor();
+//            } else {
+//                System.out.println(shape.toString());
+//            }
+//        }
+
+        MyList<Integer> listNumber = new MyList<Integer>();
+        listNumber.add(randomInt());
+        listNumber.add(randomInt());
+        listNumber.add(randomInt());
+        listNumber.add(randomInt());
+        listNumber.add(randomInt());
+        listNumber.add(randomInt());
+        listNumber.add(randomInt());
+        System.out.println(listNumber.get(2));
+        System.out.println(listNumber.get(1));
+        System.out.println(listNumber.get(4));
+        System.out.println(listNumber.get(6));
+        listNumber.get(6);
 
 
-
+    }
+    public static int randomInt(){
+        int random =(int)  Math.floor(Math.random()*(100 - 50 +1)) +50;
+        return random;
     }
 
     public static void sort(Circle[] circles) {
