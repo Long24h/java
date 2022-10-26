@@ -169,24 +169,31 @@ public class Main {
 //            }
 //        }
 
-        MyList<Integer> listNumber = new MyList<Integer>();
-        listNumber.add(randomInt());
-        listNumber.add(randomInt());
-        listNumber.add(randomInt());
-        listNumber.add(randomInt());
-        listNumber.add(randomInt());
-        listNumber.add(randomInt());
-        listNumber.add(randomInt());
-        System.out.println(listNumber.get(2));
-        System.out.println(listNumber.get(1));
-        System.out.println(listNumber.get(4));
-        System.out.println(listNumber.get(6));
-        listNumber.get(6);
+//        MyList<Integer> listNumber = new MyList<Integer>();
+//        listNumber.add(randomInt());
+//        listNumber.add(randomInt());
+//        listNumber.add(randomInt());
+//        listNumber.add(randomInt());
+//        listNumber.add(randomInt());
+//        listNumber.add(randomInt());
+//        listNumber.add(randomInt());
+//        System.out.println(listNumber.get(2));
+//        System.out.println(listNumber.get(1));
+//        System.out.println(listNumber.get(4));
+//        System.out.println(listNumber.get(6));
+//        listNumber.get(6);
+
+        MyLinkedList qq = new MyLinkedList(10);
+        qq.addFirst("gwe");
+        qq.addFirst("egw wghi");
+        qq.addFirst(14);
+        qq.addFirst(326.98);
+        qq.printList();
 
 
     }
     public static int randomInt(){
-        int random =(int)  Math.floor(Math.random()*(100 - 50 +1)) +50;
+        int random =(int) Math.floor(Math.random()*(100 - 50 +1)) +50;
         return random;
     }
 
