@@ -1,14 +1,50 @@
 import myinterfaces.Comparable;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("Hello world!");
+
+        ArrayListPractice<Integer> listNumbers = new ArrayListPractice<>();
+        listNumbers.add(0,randomInt());
+        listNumbers.add(1,randomInt());
+        listNumbers.add(2,randomInt());
+        listNumbers.add(3,-2);
+        listNumbers.add(4,randomInt());
+        System.out.println(listNumbers.toString());
+        listNumbers.add(2,-1);
+        System.out.println(listNumbers.toString());
+        listNumbers.add(randomInt());
+        listNumbers.add(randomInt());
+        System.out.println(listNumbers.toString());
+        listNumbers.add(randomInt());
+        listNumbers.add(randomInt());
+        System.out.println(listNumbers.toString());
+        int a = (Integer) listNumbers.remove(1);
+        System.out.println(a);
+        System.out.println(listNumbers.toString());
+        Object in = new Integer(-2);
+        Object inn = new Integer(-20);
+        boolean flag = listNumbers.remove(in);
+        System.out.println(listNumbers.toString());
+        System.out.println(flag);
+        System.out.println(listNumbers.size());
+        ArrayListPractice<Integer> newClone = (ArrayListPractice<Integer>) listNumbers.clone();
+        System.out.println(newClone.toString());
+        newClone.add(randomInt());
+        System.out.println(newClone.toString());
+        System.out.println(listNumbers.toString());
+        System.out.println(listNumbers.contains(in));
+        listNumbers.add(-2);
+        System.out.println(listNumbers.contains(in));
+        System.out.println(listNumbers.toString());
+        System.out.println(listNumbers.indexOf(inn));
+        System.out.println(listNumbers.get(3));
+        listNumbers.clear();
+        System.out.println(listNumbers.toString());
+        System.out.println(listNumbers.size());
 
 //        System.out.println("Nhập chiều dài hình chữ nhật:");
 //        double width = scanner.nextDouble();
@@ -169,26 +205,26 @@ public class Main {
 //            }
 //        }
 
-//        MyList<Integer> listNumber = new MyList<Integer>();
 //        listNumber.add(randomInt());
 //        listNumber.add(randomInt());
 //        listNumber.add(randomInt());
 //        listNumber.add(randomInt());
-//        listNumber.add(randomInt());
-//        listNumber.add(randomInt());
-//        listNumber.add(randomInt());
-//        System.out.println(listNumber.get(2));
-//        System.out.println(listNumber.get(1));
-//        System.out.println(listNumber.get(4));
-//        System.out.println(listNumber.get(6));
-//        listNumber.get(6);
+//        System.out.println("1: " + listNumber.get(0));
+//        System.out.println("2: " + listNumber.get(1));
+//        System.out.println("3: " + listNumber.get(2));
+//        System.out.println("4: " + listNumber.get(3));
+//        System.out.println("5: " + listNumber.get(4));
+//        listNumber.remove(2);
 
-        MyLinkedList qq = new MyLinkedList(10);
-        qq.addFirst("gwe");
-        qq.addFirst("egw wghi");
-        qq.addFirst(14);
-        qq.addFirst(326.98);
-        qq.printList();
+
+//        MyLinkedList qq = new MyLinkedList(10);
+//        qq.addFirst("gwe");
+//        qq.addFirst("egw wghi");
+//        qq.addFirst(14);
+//        qq.addFirst(326.98);
+//        qq.printList();
+
+
 
 
     }
