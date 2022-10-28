@@ -121,7 +121,7 @@ public class ArrayListPractice<E> {
     public String toString() {
         String str = "";
         for (Object item : elements) {
-            str += item + ",";
+            str += item + " ";
         }
         return str;
     }
