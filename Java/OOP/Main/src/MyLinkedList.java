@@ -1,8 +1,3 @@
-import org.w3c.dom.*;
-
-import javax.xml.soap.Node;
-import javax.xml.soap.SOAPElement;
-import javax.xml.soap.SOAPException;
 
 public class MyLinkedList {
     private int numNodes = 0;

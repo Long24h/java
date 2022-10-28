@@ -7,32 +7,61 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
+//        MyLinkedListPractice linkedList = new MyLinkedListPractice();
+//        linkedList.addFirst("one");
+//        linkedList.addFirst("two");
+//        linkedList.addFirst("three");
+////        for (String item : linkedList) {
+////            System.out.println(item);
+////        }
+//        Iterator<String> iterate = linkedList.iterator();
+//        while(iterate.hasNext()) {
+//            System.out.print(iterate.next());
+//            System.out.print(", ");
+//        }
+
+
         ArrayListPractice<Integer> listNumbers = new ArrayListPractice<>();
+
         listNumbers.add(0,randomInt());
         listNumbers.add(1,randomInt());
         listNumbers.add(2,randomInt());
         listNumbers.add(3,-2);
         listNumbers.add(4,randomInt());
+
         System.out.println(listNumbers.toString());
+
         listNumbers.add(2,-1);
+
         System.out.println(listNumbers.toString());
+
         listNumbers.add(randomInt());
         listNumbers.add(randomInt());
+
         System.out.println(listNumbers.toString());
+
         listNumbers.add(randomInt());
         listNumbers.add(randomInt());
+
         System.out.println(listNumbers.toString());
+
         int a = (Integer) listNumbers.remove(1);
         System.out.println(a);
+
         System.out.println(listNumbers.toString());
+
         Object in = new Integer(-2);
         Object inn = new Integer(-20);
         boolean flag = listNumbers.remove(in);
+
         System.out.println(listNumbers.toString());
+
         System.out.println(flag);
         System.out.println(listNumbers.size());
         ArrayListPractice<Integer> newClone = (ArrayListPractice<Integer>) listNumbers.clone();
+
         System.out.println(newClone.toString());
+
         newClone.add(randomInt());
         System.out.println(newClone.toString());
         System.out.println(listNumbers.toString());

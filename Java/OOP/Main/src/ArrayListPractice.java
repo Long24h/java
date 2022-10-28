@@ -112,13 +112,8 @@ public class ArrayListPractice<E> {
         return num;
     }
     public E get(int index){
-//        if (i >= size || i <0){
-//            throw new IndexOutOfBoundsException("Index: " + i + ", size: " + i);
-//        }
-//        return (E) elements[i];
         if (index>=elements.length || index <0){
             throw new IndexOutOfBoundsException("Warning: out of bound!");
-//            System.out.println("Warning: out of bound!");
         }
         return (E)elements[index];
     }
