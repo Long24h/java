@@ -2,6 +2,8 @@
 public class MyLinkedListPractice<E> {
     private Node head;
     private Node prev;
+
+
     public static int numNodes = 0;
 
     public MyLinkedListPractice() {
@@ -102,48 +104,48 @@ public class MyLinkedListPractice<E> {
         return temp;
     }
 
-    public boolean remove(Object obj) {
-        boolean flag = false;
-        Node node = head;
-        while (node != null) {
-            if (head.getData().equals((E) obj)) {
-                head = head.next;
-                flag = true;
-                numNodes--;
-                break;
-            } else if (node.next.getData().equals((E) obj)) {
-                if (node.next.next == null) {
-                    node.next = null;
-                    flag = true;
-                    numNodes--;
-                } else {
-                    node.next = node.next.next;
-                    flag = true;
-                    numNodes--;
-                }
-            }
-            node = node.next;
-        }
-        return flag;
-    }
+//    public boolean remove(Object obj) {
+//        boolean flag = false;
+//        Node node = head;
+//        while (node != null) {
+//            if (head.getData().equals((E) obj)) {
+//                head = head.next;
+//                flag = true;
+//                numNodes--;
+//                break;
+//            } else if (node.next.getData().equals((E) obj)) {
+//                if (node.next.next == null) {
+//                    node.next = null;
+//                    flag = true;
+//                    numNodes--;
+//                } else {
+//                    node.next = node.next.next;
+//                    flag = true;
+//                    numNodes--;
+//                }
+//            }
+//            node = node.next;
+//        }
+//        return flag;
+//    }
 
     public static void main(String[] args) {
-        MyLinkedListPractice<String> list = new MyLinkedListPractice<>();
-        list.head = new Node<String>("one");
-        System.out.println(numNodes);
-        list.addFirstNode("three");
-        System.out.println(numNodes);
-        list.addLastNode("four");
-        System.out.println(numNodes);
-        list.add("four", "two");
-        System.out.println(numNodes);
-        System.out.println(list.remove(3));
-        System.out.println(numNodes);
-        list.addLastNode("five");
-        System.out.println(numNodes);
-        System.out.println(list.remove("two"));
-        System.out.println(numNodes);
-        list.printList();
+//        MyLinkedListPractice<String> list = new MyLinkedListPractice<>();
+//        list.head = new Node<String>("one");
+//        System.out.println(numNodes);
+//        list.addFirstNode("three");
+//        System.out.println(numNodes);
+//        list.addLastNode("four");
+//        System.out.println(numNodes);
+//        list.add("four", "two");
+//        System.out.println(numNodes);
+//        System.out.println(list.remove(3));
+//        System.out.println(numNodes);
+//        list.addLastNode("five");
+//        System.out.println(numNodes);
+//        System.out.println(list.remove("two"));
+//        System.out.println(numNodes);
+//        list.printList();
     }
 }
 

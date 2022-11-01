@@ -7,7 +7,24 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
+        String str1 = "hrerhm";
+        String str2 = ReverseArrayStringByStack.reverseString(str1);
+        System.out.println(str2);
 
+        int[] arr = ReverseArrayNumberByStack.makeRandomArr();
+        System.out.println(ReverseArrayNumberByStack.printArr(arr));
+        int[] arr1 = ReverseArrayNumberByStack.reverseArr(arr);
+        System.out.println(ReverseArrayNumberByStack.printArr(arr1));
+
+//        MyLinkedListPractice<String> list = new MyLinkedListPractice<>();
+//        list.addFirstNode("one");
+//        list.addFirstNode("three");
+//        list.addLastNode("four");
+//        list.add("four", "two");
+//        System.out.println(list.remove(3));
+//        list.addLastNode("five");
+////        System.out.println(list.remove("two"));
+//        list.printList();
 
 
 
