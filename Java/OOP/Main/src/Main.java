@@ -7,7 +7,30 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
-        CountWordByMap.countWord("gnweioge");
+        Student student1 = new Student("Rebecca", 23, "UK");
+        Student student2 = new Student("Roronoa", 36, "Swiss");
+        Student student3 = new Student("Nami", 13, "Russia");
+        Student student4 = new Student("Brook", 99, "VN");
+
+        Map<Integer, Student> studentMap = new HashMap<>();
+        studentMap.put(1, student1);
+        studentMap.put(2, student2);
+        studentMap.put(3, student3);
+        studentMap.put(4, student4);
+        for (Map.Entry<Integer, Student> student : studentMap.entrySet()){
+            System.out.println(student.toString());
+        }
+
+        Set<Student> students = new HashSet<>();
+        students.add(student1);
+        students.add(student2);
+        students.add(student3);
+        students.add(student4);
+        for (Student student : students) {
+            System.out.println(student.toString());
+        }
+
+//        CountWordByMap.countWord("gnweioge");
 
 //        System.out.println(ConvertDecimalToBinary.convertDecimalToBinary(11));
 //        System.out.println(ConvertDecimalToBinary.convertDecimalToBinary(5));
