@@ -7,14 +7,17 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
-        String str1 = "hrerhm";
-        String str2 = ReverseArrayStringByStack.reverseString(str1);
-        System.out.println(str2);
+        System.out.println(ConvertDecimalToBinary.convertDecimalToBinary(11));
+        System.out.println(ConvertDecimalToBinary.convertDecimalToBinary(5));
 
-        int[] arr = ReverseArrayNumberByStack.makeRandomArr();
-        System.out.println(ReverseArrayNumberByStack.printArr(arr));
-        int[] arr1 = ReverseArrayNumberByStack.reverseArr(arr);
-        System.out.println(ReverseArrayNumberByStack.printArr(arr1));
+//        String str1 = "hrerhm";
+//        String str2 = ReverseArrayStringByStack.reverseString(str1);
+//        System.out.println(str2);
+//
+//        int[] arr = ReverseArrayNumberByStack.makeRandomArr();
+//        System.out.println(ReverseArrayNumberByStack.printArr(arr));
+//        int[] arr1 = ReverseArrayNumberByStack.reverseArr(arr);
+//        System.out.println(ReverseArrayNumberByStack.printArr(arr1));
 
 //        MyLinkedListPractice<String> list = new MyLinkedListPractice<>();
 //        list.addFirstNode("one");
