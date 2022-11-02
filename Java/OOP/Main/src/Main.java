@@ -12,23 +12,40 @@ public class Main {
         Student student3 = new Student("Nami", 13, "Russia");
         Student student4 = new Student("Brook", 99, "VN");
 
-        Map<Integer, Student> studentMap = new HashMap<>();
-        studentMap.put(1, student1);
-        studentMap.put(2, student2);
-        studentMap.put(3, student3);
-        studentMap.put(4, student4);
-        for (Map.Entry<Integer, Student> student : studentMap.entrySet()){
-            System.out.println(student.toString());
-        }
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(student1);
+        studentList.add(student2);
+        studentList.add(student3);
+        studentList.add(student4);
+        Collections.sort(studentList);
+        System.out.println(studentList);
 
-        Set<Student> students = new HashSet<>();
-        students.add(student1);
-        students.add(student2);
-        students.add(student3);
-        students.add(student4);
-        for (Student student : students) {
-            System.out.println(student.toString());
-        }
+        Collections.sort(studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                int n = (o1.getAge() >= o2.getAge()) ? 1 : -1;
+                return n;
+            }
+        });
+        System.out.println(studentList);
+
+//        Map<Integer, Student> studentMap = new HashMap<>();
+//        studentMap.put(1, student1);
+//        studentMap.put(2, student2);
+//        studentMap.put(3, student3);
+//        studentMap.put(4, student4);
+//        for (Map.Entry<Integer, Student> student : studentMap.entrySet()){
+//            System.out.println(student.toString());
+//        }
+//
+//        Set<Student> students = new HashSet<>();
+//        students.add(student1);
+//        students.add(student2);
+//        students.add(student3);
+//        students.add(student4);
+//        for (Student student : students) {
+//            System.out.println(student.toString());
+//        }
 
 //        CountWordByMap.countWord("gnweioge");
 

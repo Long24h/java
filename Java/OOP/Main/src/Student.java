@@ -1,4 +1,6 @@
-public class Student {
+import java.util.Comparator;
+
+public class Student implements Comparable<Student> {
     private String name;
     private int age;
     private String address;
@@ -36,6 +38,23 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Name: " + name + ", age: " + age + ", address: " + address;
+        return "Name: " + name + ", age: " + age + ", address: " + address + "\n";
     }
+
+    @Override
+    public int compareTo(Student student) {
+        int n = this.getName().compareTo(student.getName()) >= 0 ? 1 : -1;
+//        if (this.getName().compareTo(student.getName()) >= 0){
+//            return 1;
+//        } else {
+//            return -1;
+//        }
+        return n;
+    }
+
+//    @Override
+//    public int compare(Student o1, Student o2) {
+//        int n = (o1.getAge() >= o2.getAge()) ? 1 : -1;
+//        return n;
+//    }
 }
