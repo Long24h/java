@@ -4,7 +4,6 @@ public class BubbleSort {
     public BubbleSort() {
         makeRandomArr();
     }
-
     public int[] makeRandomArr() {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Main.randomInt();
@@ -22,12 +21,17 @@ public class BubbleSort {
 
     public void sortByBubble() {
         for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = arr.length - 1; j > i; j--) {
-                if (arr[j] > arr[j - 1]) {
+            boolean flag = false;
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
-                    arr[j] = arr[j - 1];
-                    arr[j - 1] = temp;
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    flag = true;
                 }
+            }
+            if ( flag == false){
+                break;
             }
         }
     }
@@ -54,6 +58,30 @@ public class BubbleSort {
                 System.out.print(arr[j] + "\t");
             }
             System.out.println();
+        }
+    }
+    public void selectionSort(){
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+                int temp = arr[minIndex];
+                arr[minIndex] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
+    public void interchangeSort(){
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 1 + i; j < arr.length; j++) {
+                if (arr[i] > arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
         }
     }
 

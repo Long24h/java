@@ -8,15 +8,15 @@ public class Main {
         System.out.println("Hello world!");
 
         BubbleSort bubbleSort = new BubbleSort();
-//        System.out.println(bubbleSort.toString());
-//        bubbleSort.sortByBubble();
-//        System.out.println(bubbleSort.toString());
+        System.out.println(bubbleSort.toString());
+        bubbleSort.sortByBubble();
+        System.out.println(bubbleSort.toString());
 
-        BubbleSort bubbleSort1 = new BubbleSort();
-        System.out.println(bubbleSort1.toString());
-
-        bubbleSort.bubbleSortByStep(bubbleSort1.getArr());
-        System.out.println(bubbleSort1.toString());
+//        BubbleSort bubbleSort1 = new BubbleSort();
+//        System.out.println(bubbleSort1.toString());
+//
+//        bubbleSort.bubbleSortByStep(bubbleSort1.getArr());
+//        System.out.println(bubbleSort1.toString());
 
 
 //        int[] arr = bubbleSort.getArr();
