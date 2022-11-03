@@ -6,23 +6,44 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        ProductManageLinkedList linkedList = new ProductManageLinkedList();
-        linkedList.showItem();
 
-        linkedList.addItem(new Product("bnrueib", 3258));
-        linkedList.addItem(new Product("owpgm", 378742));
-        linkedList.addItem(new Product("bnrueib", 378742));
-        linkedList.showItem();
+        BubbleSort bubbleSort = new BubbleSort();
+        System.out.println(bubbleSort.toString());
+        bubbleSort.sortByBubble();
+        System.out.println(bubbleSort.toString());
 
-        linkedList.addItem(3, new Product("aprehrmob", -13258));
-        linkedList.showItem();
+//        int[] arr = bubbleSort.getArr();
+//        for (int item : arr) {
+//            System.out.print(item + " ");
+//        }
+//
+//        System.out.println();
+//        bubbleSort.sortByBubble(arr);
+//        for (int item : arr) {
+//            System.out.print(item + " ");
+//
+//        }
+//        System.out.println();
 
-        linkedList.removeItem(2);
-        linkedList.showItem();
 
-        System.out.println(linkedList.searchItem(6));
+//        ProductManageLinkedList linkedList = new ProductManageLinkedList();
+//        linkedList.showItem();
+//
+//        linkedList.addItem(new Product("bnrueib", 3258));
+//        linkedList.addItem(new Product("owpgm", 378742));
+//        linkedList.addItem(new Product("bnrueib", 378742));
+//        linkedList.showItem();
+//
+//        linkedList.addItem(3, new Product("aprehrmob", -13258));
+//        linkedList.showItem();
+//
+//        linkedList.removeItem(2);
+//        linkedList.showItem();
+//
+//        System.out.println(linkedList.searchItem(6));
+//
+//        System.out.println(linkedList.searchItem("bnrueib"));
 
-        System.out.println(linkedList.searchItem("bnrueib"));
 
 //        ProductManage productList = new ProductManage();
 //
