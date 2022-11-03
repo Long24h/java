@@ -6,28 +6,59 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello world!");
+        ProductManageLinkedList linkedList = new ProductManageLinkedList();
+        linkedList.showItem();
 
-        Student student1 = new Student("Rebecca", 23, "UK");
-        Student student2 = new Student("Roronoa", 36, "Swiss");
-        Student student3 = new Student("Nami", 13, "Russia");
-        Student student4 = new Student("Brook", 99, "VN");
+        linkedList.addItem(new Product("bnrueib", 3258));
+        linkedList.addItem(new Product("owpgm", 378742));
+        linkedList.addItem(new Product("bnrueib", 378742));
+        linkedList.showItem();
 
-        List<Student> studentList = new ArrayList<>();
-        studentList.add(student1);
-        studentList.add(student2);
-        studentList.add(student3);
-        studentList.add(student4);
-        Collections.sort(studentList);
-        System.out.println(studentList);
+        linkedList.addItem(3, new Product("aprehrmob", -13258));
+        linkedList.showItem();
 
-        Collections.sort(studentList, new Comparator<Student>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                int n = (o1.getAge() >= o2.getAge()) ? 1 : -1;
-                return n;
-            }
-        });
-        System.out.println(studentList);
+        linkedList.removeItem(2);
+        linkedList.showItem();
+
+        System.out.println(linkedList.searchItem(6));
+
+        System.out.println(linkedList.searchItem("bnrueib"));
+
+//        ProductManage productList = new ProductManage();
+//
+//        System.out.println(productList.toString());
+//
+//        productList.addE(new Product("jtyn", 925726));
+//        productList.addE(new Product("nfkojt", 2626474));
+//        System.out.println(productList.toString());
+//
+//        System.out.println(productList.search(6));
+//        System.out.println(productList.search("bwrob"));
+//
+//        productList.removeId(4);
+//        System.out.println(productList.toString());
+
+//        Student student1 = new Student("Rebecca", 23, "UK");
+//        Student student2 = new Student("Roronoa", 36, "Swiss");
+//        Student student3 = new Student("Nami", 13, "Russia");
+//        Student student4 = new Student("Brook", 99, "VN");
+//
+//        List<Student> studentList = new ArrayList<>();
+//        studentList.add(student1);
+//        studentList.add(student2);
+//        studentList.add(student3);
+//        studentList.add(student4);
+//        Collections.sort(studentList);
+//        System.out.println(studentList);
+//
+//        Collections.sort(studentList, new Comparator<Student>() {
+//            @Override
+//            public int compare(Student o1, Student o2) {
+//                int n = (o1.getAge() >= o2.getAge()) ? 1 : -1;
+//                return n;
+//            }
+//        });
+//        System.out.println(studentList);
 
 //        Map<Integer, Student> studentMap = new HashMap<>();
 //        studentMap.put(1, student1);
