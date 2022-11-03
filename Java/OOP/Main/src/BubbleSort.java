@@ -84,6 +84,31 @@ public class BubbleSort {
             }
         }
     }
+    public void interchangeSortDemo(){
+        for (int i = 0; i < arr.length - 1; i++) {
+            System.out.println("i = " + i);
+            for (int j = i + 1; j < arr.length; j++) {
+                System.out.println("j = " + j);
+                if (arr[i] > arr[j]){
+                    System.out.println("Swap " + arr[i] + " with " + arr[j]);
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+    public void insertionSort(){
+        for (int i = 1; i < arr.length; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+    }
 
     @Override
     public String toString() {

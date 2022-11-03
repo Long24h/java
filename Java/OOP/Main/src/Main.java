@@ -1,6 +1,7 @@
 import myinterfaces.Comparable;
 import java.util.*;
 
+
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
 
@@ -9,8 +10,13 @@ public class Main {
 
         BubbleSort bubbleSort = new BubbleSort();
         System.out.println(bubbleSort.toString());
-        bubbleSort.sortByBubble();
+        int[] arr = bubbleSort.getArr();
+        bubbleSort.insertionSort();
+//        bubbleSort.sortByBubble();
         System.out.println(bubbleSort.toString());
+        System.out.println(BinarySearch.binarySearch(arr, 5));
+
+//        bubbleSort.interchangeSortDemo();
 
 //        BubbleSort bubbleSort1 = new BubbleSort();
 //        System.out.println(bubbleSort1.toString());
@@ -378,7 +384,7 @@ public class Main {
 
     }
     public static int randomInt(){
-        int random =(int) Math.floor(Math.random()*(100 - 50 +1)) +50;
+        int random =(int) Math.floor(Math.random()*(10 - 5 +1)) +5;
         return random;
     }
 
