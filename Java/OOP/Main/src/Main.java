@@ -8,9 +8,12 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
-        BubbleSort bubbleSort = new BubbleSort();
-        System.out.println(bubbleSort.toString());
-        bubbleSort.searchByIndex();
+        CalculationExample cal = new CalculationExample();
+//        cal.calc();
+
+//        BubbleSort bubbleSort = new BubbleSort();
+//        System.out.println(bubbleSort.toString());
+//        bubbleSort.searchByIndex();
 //        int[] arr = bubbleSort.getArr();
 //        bubbleSort.insertionSort();
 //        bubbleSort.sortByBubble();

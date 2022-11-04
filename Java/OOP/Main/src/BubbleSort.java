@@ -26,7 +26,6 @@ public class BubbleSort {
         try {
             System.out.println("Số có chỉ số " + index + " là: " + arr[index]);
         } catch (IndexOutOfBoundsException e){
-//            e.printStackTrace();
             System.err.println("Giá trị vượt độ dài của mảng!");
         }
     }
