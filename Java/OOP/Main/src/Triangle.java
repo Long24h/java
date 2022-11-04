@@ -29,6 +29,19 @@ public class Triangle extends Shape {
     public Triangle() {
 
     }
+    public void checkIllegalTriangle(){
+        try {
+            double a, b, c;
+            System.out.println("Nhập chiều dài cạnh thứ nhất của tam giác:");
+            a = Double.parseDouble(scanner.nextLine());
+            System.out.println("Nhập chiều dài cạnh thứ hai của tam giác:");
+            b = Double.parseDouble(scanner.nextLine());
+            System.out.println("Nhập chiều dài cạnh thứ ba của tam giác:");
+            c = Double.parseDouble(scanner.nextLine());
+        } catch (Exception e){
+            System.err.println("Lỗi " + e.getMessage());
+        }
+    }
 
     public Triangle(double side1, double side2, double side3) {
         this.side1 = side1;
@@ -74,10 +87,5 @@ public class Triangle extends Shape {
         setSide3(getSide3()*(1+ percent));
     }
 
-    public static void main(String[] args) {
-        Triangle tri = new Triangle(3, 4, 5);
-        System.out.println(tri.getPerimeter());
-        System.out.println(tri.getArea());
-        System.out.println(tri.toString());
-    }
+
 }

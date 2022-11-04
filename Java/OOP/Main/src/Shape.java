@@ -1,7 +1,10 @@
 import myinterfaces.Comparable;
 import myinterfaces.Resizeable;
 
+import java.util.Scanner;
+
 public abstract class Shape implements Comparable, Resizeable {
+    protected Scanner scanner = new Scanner(System.in);
     private String color = "green";
     private boolean filled = true;
     public Shape(){
