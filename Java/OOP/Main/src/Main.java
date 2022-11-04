@@ -10,11 +10,12 @@ public class Main {
 
         BubbleSort bubbleSort = new BubbleSort();
         System.out.println(bubbleSort.toString());
-        int[] arr = bubbleSort.getArr();
-        bubbleSort.insertionSort();
+        bubbleSort.searchByIndex();
+//        int[] arr = bubbleSort.getArr();
+//        bubbleSort.insertionSort();
 //        bubbleSort.sortByBubble();
-        System.out.println(bubbleSort.toString());
-        System.out.println(BinarySearch.binarySearch(arr, 5));
+//        System.out.println(bubbleSort.toString());
+//        System.out.println(BinarySearch.binarySearch(arr, 5));
 
 //        bubbleSort.interchangeSortDemo();
 
@@ -384,7 +385,7 @@ public class Main {
 
     }
     public static int randomInt(){
-        int random =(int) Math.floor(Math.random()*(10 - 5 +1)) +5;
+        int random =(int) Math.floor(Math.random()*(100 - 0 +1)) + 0;
         return random;
     }
 

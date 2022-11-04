@@ -1,5 +1,7 @@
+import java.util.Scanner;
 public class BubbleSort {
-    private int[] arr = new int[10];
+    private static Scanner scanner = new Scanner(System.in);
+    private int[] arr = new int[100];
 
     public BubbleSort() {
         makeRandomArr();
@@ -17,6 +19,16 @@ public class BubbleSort {
 
     public void setArr(int[] arr) {
         this.arr = arr;
+    }
+    public void searchByIndex(){
+        System.out.println("Nhập chỉ số cần tìm trong mảng:");
+        int index = Integer.parseInt(scanner.nextLine());
+        try {
+            System.out.println("Số có chỉ số " + index + " là: " + arr[index]);
+        } catch (IndexOutOfBoundsException e){
+//            e.printStackTrace();
+            System.err.println("Giá trị vượt độ dài của mảng!");
+        }
     }
 
     public void sortByBubble() {
@@ -67,10 +79,11 @@ public class BubbleSort {
                 if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
-                int temp = arr[minIndex];
-                arr[minIndex] = arr[i];
-                arr[i] = temp;
+
             }
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
         }
     }
     public void interchangeSort(){
