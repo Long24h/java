@@ -23,7 +23,7 @@ public class ProductManagement {
     }
 
     public static ArrayList<Product> getProductsList() {
-        return ProductManagement.productsList;
+        return productsList;
     }
 
     public static void setProductsList(ArrayList<Product> productsList) {
@@ -40,17 +40,17 @@ public class ProductManagement {
             }
         }
     }
-    public Product getProductById(int id){
+    public Product searchProductById(int id){
         Product temp = new Product();
         for (Product product : productsList) {
-//            if (product.getId() == id){
-//                temp = product;
-//            }
-            temp = (product.getId() == id) ? product : null;
+            if (product.getId() == id){
+                temp = product;
+                break;
+            }
         }
         return temp;
     }
-    public ArrayList<Product> getProductByName(String name){
+    public ArrayList<Product> searchProductByName(String name){
         ArrayList<Product> sameName = new ArrayList<>();
         for (Product product : productsList) {
             if (product.getName().toUpperCase().equals(name.toUpperCase())){
@@ -59,7 +59,7 @@ public class ProductManagement {
         }
         return sameName;
     }
-    public ArrayList<Product> getProductByEntryPrice(int EntryPrice){
+    public ArrayList<Product> searchProductByEntryPrice(int EntryPrice){
         ArrayList<Product> sameEntryPrice = new ArrayList<>();
         for (Product product : productsList) {
             if (product.getEntryPrice() == EntryPrice){
@@ -68,7 +68,7 @@ public class ProductManagement {
         }
         return sameEntryPrice;
     }
-    public ArrayList<Product> getProductByInventory(float inventory){
+    public ArrayList<Product> searchProductByInventory(float inventory){
         ArrayList<Product> sameInventory = new ArrayList<>();
         for (Product product : productsList) {
             if (product.getInventory() == inventory){
@@ -77,7 +77,7 @@ public class ProductManagement {
         }
         return sameInventory;
     }
-    public ArrayList<Product> getProductByUnit(String unit){
+    public ArrayList<Product> searchProductByUnit(String unit){
         ArrayList<Product> sameUnit = new ArrayList<>();
         for (Product product : productsList) {
             if (product.getUnit().toUpperCase().equals(unit.toUpperCase())){
@@ -86,7 +86,7 @@ public class ProductManagement {
         }
         return sameUnit;
     }
-    public ArrayList<Product> getProductBySupplier(String supplier){
+    public ArrayList<Product> searchProductBySupplier(String supplier){
         ArrayList<Product> sameSupplier = new ArrayList<>();
         for (Product product : productsList) {
             if (product.getSupplier().toUpperCase().equals(supplier.toUpperCase())){

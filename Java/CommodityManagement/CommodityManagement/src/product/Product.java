@@ -93,7 +93,8 @@ public class Product {
     public String toString() {
         String dateCreateAt = DateUtils.formatDateToString(this.dateCreate);
         String dateUpdateAt = DateUtils.formatDateToString(this.dateUpdate);
-        return "id: " + id + ", name: " + name + ", entry price: " + entryPrice + ", supplier: " + supplier
-                + ", date create: " + dateCreate + ", date update: " + dateUpdate + "\n";
+        return "id: " + id + ", name: " + name + ", entry price: " + entryPrice + ", inventory: " + inventory
+                + ", unit: " + unit + ", supplier: " + supplier + ", date create: " + dateCreate + ", date update: "
+                + dateUpdate + "\n";
     }
 }

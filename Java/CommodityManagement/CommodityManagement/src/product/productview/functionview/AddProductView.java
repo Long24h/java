@@ -34,5 +34,7 @@ public class AddProductView extends ProductTemplate {
 
         Product newProduct = new Product(name, inventory, unit, entryPrice, supplier, dateCreate, dateUpdate);
         productManagement.addProduct(newProduct);
+
+        showProduct(productManagement.getProductsList());
     }
 }
