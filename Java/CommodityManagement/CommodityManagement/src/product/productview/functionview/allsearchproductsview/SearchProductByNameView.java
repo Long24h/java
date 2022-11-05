@@ -14,7 +14,7 @@ public class SearchProductByNameView extends ProductTemplate {
         System.out.println("Enter product's name to search:");
         String name = scanner.nextLine();
 
-        productManagement.searchProductByName(name);
+        productManagement.searchName(name);
 
         ArrayList<Product> sameName = new ArrayList<>();
 

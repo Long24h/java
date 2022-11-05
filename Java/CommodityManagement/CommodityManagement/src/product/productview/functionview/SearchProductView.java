@@ -15,9 +15,9 @@ public class SearchProductView extends ProductTemplate {
             System.out.println("Get product by:");
             System.out.println("1. ID:");
             System.out.println("2. Name:");
-            System.out.println("3. Price:");
-            System.out.println("4. Inventory:");
-            System.out.println("5. Unit:");
+            System.out.println("3. Inventory:");
+            System.out.println("4. Unit:");
+            System.out.println("5. Entry Price:");
             System.out.println("6. Supplier:");
             System.out.println("0. Exit!");
 
@@ -31,13 +31,16 @@ public class SearchProductView extends ProductTemplate {
                     SearchProductByNameView searchProductByNameView = new SearchProductByNameView();
                     break;
                 case 3:
-                    SearchProductByEntryPriceView searchProductByEntryPriceView = new SearchProductByEntryPriceView();
+                    SearchProductByInventoryView searchProductByInventoryView = new SearchProductByInventoryView();
                     break;
                 case 4:
+                    SearchProductByUnitView searchProductByUnitView = new SearchProductByUnitView();
                     break;
                 case 5:
+                    SearchProductByEntryPriceView searchProductByEntryPriceView = new SearchProductByEntryPriceView();
                     break;
                 case 6:
+                    SearchProductBySupplierView searchProductBySupplierView = new SearchProductBySupplierView();
                     break;
                 case 0:
                     flag = false;

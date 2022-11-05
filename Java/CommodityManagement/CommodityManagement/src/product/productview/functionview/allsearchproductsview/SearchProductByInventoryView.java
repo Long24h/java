@@ -9,8 +9,8 @@ public class SearchProductByInventoryView extends ProductTemplate {
     @Override
     protected void showBody() {
         System.out.println("Enter product's inventory to search:");
-        float inventory = Float.parseFloat(scanner.nextLine());
+        int inventory = Integer.parseInt(scanner.nextLine());
 
-        productManagement.searchProductByInventory(inventory);
+        productManagement.searchInventory(inventory);
     }
 }

@@ -11,6 +11,6 @@ public class SearchProductByUnitView extends ProductTemplate {
         System.out.println("Enter product's unit to search:");
         String unit = scanner.nextLine();
 
-        productManagement.searchProductByUnit(unit);
+        productManagement.searchUnit(unit);
     }
 }

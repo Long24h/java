@@ -15,6 +15,6 @@ public class SearchProductByEntryPriceView extends ProductTemplate{
         System.out.println("Enter product's entry price to search:");
         int entryPrice = Integer.parseInt(scanner.nextLine());
 
-        productManagement.searchProductByEntryPrice(entryPrice);
+        productManagement.searchEntryPrice(entryPrice);
     }
 }

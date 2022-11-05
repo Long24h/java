@@ -15,12 +15,12 @@ public class Main {
 
         ProductManagement productManagement = new ProductManagement();
         productManagement.addProduct(new Product("greiun", 364, "hh", 375, "nohn", dateCreate, dateUpdate));
-        System.out.println(productManagement.searchProductById(3));
-        System.out.println(productManagement.searchProductByName("Orange"));
-        System.out.println(productManagement.searchProductByEntryPrice(9000));
-        System.out.println(productManagement.searchProductByInventory(16));
-        System.out.println(productManagement.searchProductByUnit("kg"));
-        System.out.println(productManagement.searchProductBySupplier("Dalat"));
+        System.out.println(productManagement.searchId(3));
+        System.out.println(productManagement.searchName("Orange"));
+        System.out.println(productManagement.searchEntryPrice(9000));
+        System.out.println(productManagement.searchInventory(16));
+        System.out.println(productManagement.searchUnit("kg"));
+        System.out.println(productManagement.searchSupplier("Dalat"));
 
         productManagement.removeProduct(2);
 

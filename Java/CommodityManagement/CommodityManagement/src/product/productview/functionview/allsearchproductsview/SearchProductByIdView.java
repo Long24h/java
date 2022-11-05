@@ -15,6 +15,6 @@ public class SearchProductByIdView extends ProductTemplate {
         System.out.println("Enter product's ID to search:");
         int id = Integer.parseInt(scanner.nextLine());
 
-        System.out.println(productManagement.searchProductById(id));
+        System.out.println(productManagement.searchId(id));
     }
 }

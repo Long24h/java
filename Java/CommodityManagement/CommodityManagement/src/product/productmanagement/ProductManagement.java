@@ -1,12 +1,12 @@
 package product.productmanagement;
 
+import iterfaces.product.ProductSearchable;
+import iterfaces.product.ProductSortable;
 import product.Product;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Scanner;
+import java.util.*;
 
-public class ProductManagement {
+public class ProductManagement implements ProductSortable, ProductSearchable {
     private Scanner scanner = new Scanner(System.in);
     private static ArrayList<Product> productsList = new ArrayList<>();
     public ProductManagement(){
@@ -40,65 +40,11 @@ public class ProductManagement {
             }
         }
     }
-    public Product searchProductById(int id){
-        Product temp = new Product();
-        for (Product product : productsList) {
-            if (product.getId() == id){
-                temp = product;
-                break;
-            }
-        }
-        return temp;
-    }
-    public ArrayList<Product> searchProductByName(String name){
-        ArrayList<Product> sameName = new ArrayList<>();
-        for (Product product : productsList) {
-            if (product.getName().toUpperCase().equals(name.toUpperCase())){
-                sameName.add(product);
-            }
-        }
-        return sameName;
-    }
-    public ArrayList<Product> searchProductByEntryPrice(int EntryPrice){
-        ArrayList<Product> sameEntryPrice = new ArrayList<>();
-        for (Product product : productsList) {
-            if (product.getEntryPrice() == EntryPrice){
-                sameEntryPrice.add(product);
-            }
-        }
-        return sameEntryPrice;
-    }
-    public ArrayList<Product> searchProductByInventory(float inventory){
-        ArrayList<Product> sameInventory = new ArrayList<>();
-        for (Product product : productsList) {
-            if (product.getInventory() == inventory){
-                sameInventory.add(product);
-            }
-        }
-        return sameInventory;
-    }
-    public ArrayList<Product> searchProductByUnit(String unit){
-        ArrayList<Product> sameUnit = new ArrayList<>();
-        for (Product product : productsList) {
-            if (product.getUnit().toUpperCase().equals(unit.toUpperCase())){
-                sameUnit.add(product);
-            }
-        }
-        return sameUnit;
-    }
-    public ArrayList<Product> searchProductBySupplier(String supplier){
-        ArrayList<Product> sameSupplier = new ArrayList<>();
-        for (Product product : productsList) {
-            if (product.getSupplier().toUpperCase().equals(supplier.toUpperCase())){
-                sameSupplier.add(product);
-            }
-        }
-        return sameSupplier;
-    }
-    public void setProduct(int id){
+
+    public void editProduct(int id){
         for (int i = 0; i < productsList.size(); i++) {
             if (productsList.get(i).getId() == id){
-                System.out.println("Set this product:");
+                System.out.println("edit this product:");
                 System.out.println("Enter new product's name:");
                 productsList.get(i).setName(scanner.nextLine());
 
@@ -117,5 +63,106 @@ public class ProductManagement {
                 productsList.get(i).setDateUpdate(new Date());
             }
         }
+    }
+    public void sortProduct(Comparator<Product> comparator){
+        productsList.sort(comparator);
+    }
+
+    @Override
+    public Product searchId(int id) {
+        Product temp = new Product();
+        for (Product product : productsList) {
+            if (product.getId() == id){
+                temp = product;
+                break;
+            }
+        }
+        return temp;
+    }
+
+    @Override
+    public List<Product> searchName(String name) {
+        List<Product> sameName = new ArrayList<>();
+        for (Product product : productsList) {
+            if (product.getName().toUpperCase().equals(name.toUpperCase())){
+                sameName.add(product);
+            }
+        }
+        return sameName;
+    }
+
+
+    @Override
+    public List<Product> searchInventory(int inventory) {
+        List<Product> sameInventory = new ArrayList<>();
+        for (Product product : productsList) {
+            if (product.getInventory() == inventory){
+                sameInventory.add(product);
+            }
+        }
+        return sameInventory;
+    }
+
+    @Override
+    public List<Product> searchEntryPrice(int entryPrice) {
+        List<Product> sameEntryPrice = new ArrayList<>();
+        for (Product product : productsList) {
+            if (product.getEntryPrice() == entryPrice){
+                sameEntryPrice.add(product);
+            }
+        }
+        return sameEntryPrice;
+    }
+
+    @Override
+    public List<Product> searchUnit(String unit) {
+        List<Product> sameUnit = new ArrayList<>();
+        for (Product product : productsList) {
+            if (product.getUnit().toUpperCase().equals(unit.toUpperCase())){
+                sameUnit.add(product);
+            }
+        }
+        return sameUnit;
+    }
+
+    @Override
+    public List<Product> searchSupplier(String supplier) {
+        List<Product> sameSupplier = new ArrayList<>();
+        for (Product product : productsList) {
+            if (product.getSupplier().toUpperCase().equals(supplier.toUpperCase())){
+                sameSupplier.add(product);
+            }
+        }
+        return sameSupplier;
+    }
+
+    @Override
+    public void sortInventory(String inventory) {
+
+    }
+
+    @Override
+    public void sortUnit(String unit) {
+
+    }
+
+    @Override
+    public void sortEntryPrice(int entryPrice) {
+
+    }
+
+    @Override
+    public void sortSupplier(String supplier) {
+
+    }
+
+    @Override
+    public void sortId(int id) {
+
+    }
+
+    @Override
+    public void sortName(String name) {
+
     }
 }

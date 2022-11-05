@@ -11,6 +11,6 @@ public class SearchProductBySupplierView extends ProductTemplate {
         System.out.println("Enter product's supplier to search:");
         String supplier = scanner.nextLine();
 
-        productManagement.searchProductBySupplier(supplier);
+        productManagement.searchSupplier(supplier);
     }
 }
