@@ -1,6 +1,11 @@
 package product.productview.functionview;
 
+import product.Product;
 import product.productview.ProductTemplate;
+import product.productview.functionview.allsort.*;
+import product.productview.functionview.allsortproductview.SortProductByIdView;
+import product.productview.functionview.allsortproductview.SortProductByNameView;
+
 
 public class SortProductView extends ProductTemplate {
     public SortProductView() {
@@ -25,18 +30,30 @@ public class SortProductView extends ProductTemplate {
 
             switch (choice) {
                 case 1:
+                    SortProductByIdView sortProductByIdView = new SortProductByIdView();
                     break;
                 case 2:
+                    SortProductByNameView sortProductByNameView = new SortProductByNameView();
                     break;
                 case 3:
+                    comparator = new ComparatorByUnit();
+                    productManagement.sortProduct(comparator);
                     break;
                 case 4:
+                    comparator = new ComparatorByEntryPrice();
+                    productManagement.sortProduct(comparator);
                     break;
                 case 5:
+                    comparator = new ComparatorBySupplier();
+                    productManagement.sortProduct(comparator);
                     break;
                 case 6:
+                    comparator = new ComparatorByDateCreate();
+                    productManagement.sortProduct(comparator);
                     break;
                 case 7:
+                    comparator = new ComparatorByDateUpdate();
+                    productManagement.sortProduct(comparator);
                     break;
                 case 0:
                     flag = false;

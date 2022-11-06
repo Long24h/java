@@ -12,7 +12,8 @@ public class SearchProductView extends ProductTemplate {
     protected void showBody() {
         boolean flag = true;
         do {
-            System.out.println("Get product by:");
+            System.out.println("Search product by:");
+            System.out.println("------------------\n");
             System.out.println("1. ID:");
             System.out.println("2. Name:");
             System.out.println("3. Inventory:");

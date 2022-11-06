@@ -5,7 +5,7 @@ import utils.DateUtils;
 import java.util.Date;
 
 public class Product {
-    private int id;
+    private long id;
     private String name;
     private float inventory;
     private String unit;
@@ -13,9 +13,9 @@ public class Product {
     private String supplier;
     private Date dateCreate;
     private Date dateUpdate;
-    private static int count = 1;
 
-    public int getId() {
+
+    public long getId() {
         return id;
     }
 
@@ -79,7 +79,7 @@ public class Product {
     }
 
     public Product(String name, float inventory, String unit, int entryPrice, String supplier, Date dateCreate, Date dateUpdate) {
-        this.id = count++;
+        this.id = System.currentTimeMillis()%100000;
         this.name = name;
         this.inventory = inventory;
         this.entryPrice = entryPrice;

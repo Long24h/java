@@ -12,7 +12,7 @@ public class RemoveProductView extends ProductTemplate {
         System.out.println("Please enter product's id to remove:");
         int id = Integer.parseInt(scanner.nextLine());
 
-        productManagement.removeProduct(id);
+        ProductManagement.removeProduct(id);
 
         showProduct(productManagement.getProductsList());
     }

@@ -1,10 +1,11 @@
 package product.productview.functionview.allsearchproductsview;
 
+import product.productmanagement.ProductManagement;
 import product.productview.ProductTemplate;
 
 public class SearchProductByInventoryView extends ProductTemplate {
     public SearchProductByInventoryView(){
-
+        showBody();
     }
     @Override
     protected void showBody() {

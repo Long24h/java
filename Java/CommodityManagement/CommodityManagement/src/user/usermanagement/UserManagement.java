@@ -1,8 +1,6 @@
 package user.usermanagement;
 
 import iterfaces.user.UserSearchable;
-import iterfaces.user.UserSortable;
-import product.Product;
 import user.User;
 
 import java.util.*;
@@ -10,7 +8,7 @@ import java.util.*;
 import static user.usermanagement.UserRole.ADMIN;
 import static user.usermanagement.UserRole.USER;
 
-public class UserManagement implements UserSearchable, UserSortable {
+public class UserManagement implements UserSearchable {
     public UserManagement() {
 
     }
@@ -171,43 +169,4 @@ public class UserManagement implements UserSearchable, UserSortable {
         return sameRole;
     }
 
-    @Override
-    public void sortId(int id) {
-
-    }
-
-    @Override
-    public void sortName(String name) {
-
-    }
-
-    @Override
-    public void sortUserName(String username) {
-
-    }
-
-    @Override
-    public void sortPassword(String password) {
-
-    }
-
-    @Override
-    public void sortMoblie(int mobile) {
-
-    }
-
-    @Override
-    public void sortEmail(String email) {
-
-    }
-
-    @Override
-    public void sortAddress(String address) {
-
-    }
-
-    @Override
-    public void sortUserRole(UserRole userRole) {
-
-    }
 }

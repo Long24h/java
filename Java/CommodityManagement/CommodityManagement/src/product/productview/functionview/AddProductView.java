@@ -1,13 +1,13 @@
 package product.productview.functionview;
 
 import product.Product;
+import product.productmanagement.ProductManagement;
 import product.productview.ProductTemplate;
 
 import java.util.Date;
 
 public class AddProductView extends ProductTemplate {
     public AddProductView(){
-
     }
     @Override
     protected void showBody() {
@@ -33,7 +33,7 @@ public class AddProductView extends ProductTemplate {
         Date dateUpdate = new Date();
 
         Product newProduct = new Product(name, inventory, unit, entryPrice, supplier, dateCreate, dateUpdate);
-        productManagement.addProduct(newProduct);
+        ProductManagement.addProduct(newProduct);
 
         showProduct(productManagement.getProductsList());
     }
