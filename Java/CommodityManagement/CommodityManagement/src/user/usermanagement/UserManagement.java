@@ -1,6 +1,7 @@
 package user.usermanagement;
 
 import iterfaces.user.UserSearchable;
+import product.Product;
 import user.User;
 
 import java.util.*;
@@ -76,8 +77,8 @@ public class UserManagement implements UserSearchable {
         userList.sort(comparator);
     }
 
-    @Override
-    public Object searchId(int id) {
+
+    public User searchId(int id) {
         User temp = new User();
         for (User user : userList) {
             if (user.getId() == id){

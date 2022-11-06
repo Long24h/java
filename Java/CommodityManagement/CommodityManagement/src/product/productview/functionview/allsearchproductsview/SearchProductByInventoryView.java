@@ -5,13 +5,13 @@ import product.productview.ProductTemplate;
 
 public class SearchProductByInventoryView extends ProductTemplate {
     public SearchProductByInventoryView(){
-        showBody();
+
     }
     @Override
     protected void showBody() {
         System.out.println("Enter product's inventory to search:");
         int inventory = Integer.parseInt(scanner.nextLine());
 
-        productManagement.searchInventory(inventory);
+        showProduct(productManagement.searchInventory(inventory));
     }
 }

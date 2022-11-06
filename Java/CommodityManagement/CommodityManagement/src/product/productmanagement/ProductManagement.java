@@ -1,20 +1,19 @@
 package product.productmanagement;
 
-import iterfaces.product.ProductSearchable;
 import product.Product;
 
 import java.util.*;
 
-public class ProductManagement implements ProductSearchable {
+public class ProductManagement {
     private static Scanner scanner = new Scanner(System.in);
-    private static ArrayList<Product> productsList = new ArrayList<>();
+    private static ArrayList<Product> productsList;
     public ProductManagement(){
-
     }
-    static {
-//        productsList = new ArrayList<>();
+    public static void init() {
+        productsList = new ArrayList<>();
         Date dateCreate = new Date();
         Date dateUpdate = new Date();
+
         productsList.add(new Product("Robusta", 64, "kg", 48000, "Trung Nguyen", dateCreate, dateUpdate));
         try {
             Thread.sleep(100);
@@ -42,6 +41,43 @@ public class ProductManagement implements ProductSearchable {
         productsList.add(new Product("Milk", 16, "can", 9000, "VinaMilk", dateCreate, dateUpdate));
 
     }
+    static {
+        productsList = new ArrayList<>();
+        Date dateCreate = new Date();
+        Date dateUpdate = new Date();
+
+        productsList.add(new Product("Robusta", 64, "kg", 48000, "Trung Nguyen", dateCreate, dateUpdate));
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        productsList.add(new Product("Arabica", 19, "kg", 56000, "Nestle", dateCreate, dateUpdate));
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        productsList.add(new Product("Moka", 94, "kg", 47000, "Dalat", dateCreate, dateUpdate));
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        productsList.add(new Product("Orange", 7, "kg", 16000, "Ha Giang", dateCreate, dateUpdate));
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        productsList.add(new Product("Milk", 16, "can", 9000, "VinaMilk", dateCreate, dateUpdate));
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        productsList.add(new Product("Moka", 64, "can", 56000, "Trung Nguyen", dateCreate, dateUpdate));
+    }
 
     public static ArrayList<Product> getProductsList() {
         return productsList;
@@ -50,9 +86,7 @@ public class ProductManagement implements ProductSearchable {
     public static void setProductsList(ArrayList<Product> productsList) {
         ProductManagement.productsList = productsList;
     }
-    public static void addProduct(Product product){
-        productsList.add(product);
-    }
+
     public static void removeProduct(int id){
         for (int i = 0; i < productsList.size(); i++) {
             if (productsList.get(i).getId() == id){
@@ -88,38 +122,38 @@ public class ProductManagement implements ProductSearchable {
         } catch (ArrayIndexOutOfBoundsException e){
             System.err.println("Cannot find product id: " + id);
         }
-
     }
     public void sortProduct(Comparator<Product> comparator){
         productsList.sort(comparator);
     }
+    public static void addProduct(Product product){
+        productsList.add(product);
+    }
 
-    @Override
-    public Product searchId(int id) {
+
+    public static Product searchId(int id) {
         Product temp = new Product();
-        for (Product product : this.productsList) {
-            if (product.getId() == id){
-                temp = product;
+        for (int i = 0; i < getProductsList().size(); i++) {
+            if (getProductsList().get(i).getId() == id) {
+                temp = getProductsList().get(i);
                 break;
             }
         }
         return temp;
     }
 
-    @Override
-    public List<Product> searchName(String name) {
+
+    public static List<Product> searchName(String name) {
         List<Product> sameName = new ArrayList<>();
         for (Product product : productsList) {
-            if (product.getName().toUpperCase().equals(name.toUpperCase())){
+            if (product.getName().toUpperCase().contains(name.toUpperCase())){
                 sameName.add(product);
             }
         }
         return sameName;
     }
 
-
-    @Override
-    public List<Product> searchInventory(int inventory) {
+    public static List<Product> searchInventory(int inventory) {
         List<Product> sameInventory = new ArrayList<>();
         for (Product product : productsList) {
             if (product.getInventory() == inventory){
@@ -129,7 +163,7 @@ public class ProductManagement implements ProductSearchable {
         return sameInventory;
     }
 
-    @Override
+
     public List<Product> searchEntryPrice(int entryPrice) {
         List<Product> sameEntryPrice = new ArrayList<>();
         for (Product product : productsList) {
@@ -140,7 +174,7 @@ public class ProductManagement implements ProductSearchable {
         return sameEntryPrice;
     }
 
-    @Override
+
     public List<Product> searchUnit(String unit) {
         List<Product> sameUnit = new ArrayList<>();
         for (Product product : productsList) {
@@ -151,7 +185,7 @@ public class ProductManagement implements ProductSearchable {
         return sameUnit;
     }
 
-    @Override
+
     public List<Product> searchSupplier(String supplier) {
         List<Product> sameSupplier = new ArrayList<>();
         for (Product product : productsList) {
