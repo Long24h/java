@@ -5,10 +5,17 @@ import java.util.*;
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         System.out.println("Hello world!");
 
-        CalculationExample cal = new CalculationExample();
+        ReadFileExample readFileExample = new ReadFileExample();
+        readFileExample.readFileTest();
+
+//        TestFile testFile = new TestFile();
+//        testFile.makeFile();
+//        testFile.writeDataWithAutoClose();
+
+//        CalculationExample cal = new CalculationExample();
 //        cal.calc();
 
 //        BubbleSort bubbleSort = new BubbleSort();
