@@ -16,25 +16,25 @@ public class ProductManagement {
 
         productsList.add(new Product("Robusta", 64, "kg", 48000, "Trung Nguyen", dateCreate, dateUpdate));
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         productsList.add(new Product("Arabica", 19, "kg", 56000, "Nestle", dateCreate, dateUpdate));
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         productsList.add(new Product("Moka", 94, "kg", 47000, "Dalat", dateCreate, dateUpdate));
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         productsList.add(new Product("Orange", 7, "kg", 16000, "Ha Giang", dateCreate, dateUpdate));
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -48,31 +48,31 @@ public class ProductManagement {
 
         productsList.add(new Product("Robusta", 64, "kg", 48000, "Trung Nguyen", dateCreate, dateUpdate));
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         productsList.add(new Product("Arabica", 19, "kg", 56000, "Nestle", dateCreate, dateUpdate));
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         productsList.add(new Product("Moka", 94, "kg", 47000, "Dalat", dateCreate, dateUpdate));
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         productsList.add(new Product("Orange", 7, "kg", 16000, "Ha Giang", dateCreate, dateUpdate));
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         productsList.add(new Product("Milk", 16, "can", 9000, "VinaMilk", dateCreate, dateUpdate));
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -137,6 +137,8 @@ public class ProductManagement {
             if (getProductsList().get(i).getId() == id) {
                 temp = getProductsList().get(i);
                 break;
+            } else{
+                temp = null;
             }
         }
         return temp;
@@ -145,9 +147,13 @@ public class ProductManagement {
 
     public static List<Product> searchName(String name) {
         List<Product> sameName = new ArrayList<>();
-        for (Product product : productsList) {
-            if (product.getName().toUpperCase().contains(name.toUpperCase())){
-                sameName.add(product);
+        int count = 0;
+        for (int i = 0; i < productsList.size(); i++) {
+            if (productsList.get(i).getName().toUpperCase().contains(name.toUpperCase())) {
+                sameName.add(productsList.get(i));
+                count++;
+            } else if (count == 0 && i == productsList.size() -  1) {
+                sameName = null;
             }
         }
         return sameName;
@@ -155,41 +161,55 @@ public class ProductManagement {
 
     public static List<Product> searchInventory(int inventory) {
         List<Product> sameInventory = new ArrayList<>();
-        for (Product product : productsList) {
-            if (product.getInventory() == inventory){
-                sameInventory.add(product);
+        int count = 0;
+        for (int i = 0; i < productsList.size(); i++) {
+            if (productsList.get(i).getInventory() == inventory) {
+                sameInventory.add(productsList.get(i));
+                count++;
+            } else if (count == 0 && i == productsList.size() -  1) {
+                sameInventory = null;
             }
         }
         return sameInventory;
     }
 
 
-    public List<Product> searchEntryPrice(int entryPrice) {
+    public static List<Product> searchEntryPrice(int entryPrice) {
         List<Product> sameEntryPrice = new ArrayList<>();
-        for (Product product : productsList) {
-            if (product.getEntryPrice() == entryPrice){
-                sameEntryPrice.add(product);
+        int count = 0;
+
+        for (int i = 0; i < productsList.size(); i++) {
+            if (productsList.get(i).getEntryPrice() == entryPrice) {
+                sameEntryPrice.add(productsList.get(i));
+                count++;
+            } else if (count == 0 && i == productsList.size() -  1) {
+                sameEntryPrice = null;
             }
         }
         return sameEntryPrice;
     }
 
 
-    public List<Product> searchUnit(String unit) {
+    public static List<Product> searchUnit(String unit) {
         List<Product> sameUnit = new ArrayList<>();
-        for (Product product : productsList) {
-            if (product.getUnit().toUpperCase().equals(unit.toUpperCase())){
-                sameUnit.add(product);
+        int count = 0;
+
+        for (int i = 0; i < productsList.size(); i++) {
+            if (productsList.get(i).getUnit().toUpperCase().contains(unit.toUpperCase())) {
+                sameUnit.add(productsList.get(i));
+                count++;
+            } else if (count == 0 && i == productsList.size() -  1) {
+                sameUnit = null;
             }
         }
         return sameUnit;
     }
 
 
-    public List<Product> searchSupplier(String supplier) {
+    public static List<Product> searchSupplier(String supplier) {
         List<Product> sameSupplier = new ArrayList<>();
         for (Product product : productsList) {
-            if (product.getSupplier().toUpperCase().equals(supplier.toUpperCase())){
+            if (product.getSupplier().toUpperCase().contains(supplier.toUpperCase())){
                 sameSupplier.add(product);
             }
         }

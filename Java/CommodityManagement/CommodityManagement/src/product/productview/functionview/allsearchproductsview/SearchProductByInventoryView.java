@@ -1,6 +1,5 @@
 package product.productview.functionview.allsearchproductsview;
 
-import product.productmanagement.ProductManagement;
 import product.productview.ProductTemplate;
 
 public class SearchProductByInventoryView extends ProductTemplate {
@@ -9,9 +8,25 @@ public class SearchProductByInventoryView extends ProductTemplate {
     }
     @Override
     protected void showBody() {
-        System.out.println("Enter product's inventory to search:");
-        int inventory = Integer.parseInt(scanner.nextLine());
+        boolean flag = false;
+        int inventory;
 
-        showProduct(productManagement.searchInventory(inventory));
+        do {
+            try {
+                System.out.println("Enter product's inventory to search:");
+                inventory = Integer.parseInt(scanner.nextLine());
+
+                if (productManagement.searchInventory(inventory) == null) {
+                    System.out.printf("There is no product with inventory = %s \n", inventory);
+                }else {
+                    showProduct(productManagement.searchInventory(inventory));
+                }
+            }catch(NumberFormatException numberFormatException){
+                System.err.println("Invalid input, re-enter please!!!");
+                flag = true;
+            }
+        }while(flag);
+
+
     }
 }

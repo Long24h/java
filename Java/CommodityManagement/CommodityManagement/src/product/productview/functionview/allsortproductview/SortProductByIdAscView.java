@@ -1,19 +1,18 @@
 package product.productview.functionview.allsortproductview;
 
-import product.Product;
 import product.productview.ProductTemplate;
 import product.productview.functionview.allsort.ComparatorById;
 
-import java.util.Comparator;
+import java.util.Collections;
 
-public class SortProductByIdView extends ProductTemplate {
-    public SortProductByIdView(){
-        showBody();
+public class SortProductByIdAscView extends ProductTemplate {
+    public SortProductByIdAscView(){
+
     }
     @Override
     protected void showBody() {
         comparator = new ComparatorById();
-        productManagement.sortProduct(comparator);
+        Collections.sort(productManagement.getProductsList(), comparator);
         showProduct(productManagement.getProductsList());
     }
 }

@@ -1,21 +1,31 @@
 package product.productview.functionview.allsearchproductsview;
 
-
-import product.Product;
-import product.productmanagement.ProductManagement;
 import product.productview.ProductTemplate;
 
-import java.util.ArrayList;
+public class SearchProductByEntryPriceView extends ProductTemplate {
+    public SearchProductByEntryPriceView() {
 
-public class SearchProductByEntryPriceView extends ProductTemplate{
-    public SearchProductByEntryPriceView(){
-        showBody();
     }
+
     @Override
     protected void showBody() {
-        System.out.println("Enter product's entry price to search:");
-        int entryPrice = Integer.parseInt(scanner.nextLine());
+        boolean flag = false;
+        int entryPrice;
 
-        productManagement.searchEntryPrice(entryPrice);
+        do {
+            try {
+                System.out.println("Enter product's entry price to search:");
+                entryPrice = Integer.parseInt(scanner.nextLine());
+
+                if (productManagement.searchEntryPrice(entryPrice) == null) {
+                    System.out.printf("There is no product with entry price = %s \n", entryPrice);
+                } else {
+                    showProduct(productManagement.searchEntryPrice(entryPrice));
+                }
+            } catch (NumberFormatException numberFormatException) {
+                System.err.println("Invalid input, try again!");
+                flag = true;
+            }
+        } while (flag);
     }
 }

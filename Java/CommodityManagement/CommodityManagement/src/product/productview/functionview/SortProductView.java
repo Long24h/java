@@ -1,10 +1,8 @@
 package product.productview.functionview;
 
-import product.Product;
 import product.productview.ProductTemplate;
 import product.productview.functionview.allsort.*;
-import product.productview.functionview.allsortproductview.SortProductByIdView;
-import product.productview.functionview.allsortproductview.SortProductByNameView;
+import product.productview.functionview.allsortproductview.*;
 
 
 public class SortProductView extends ProductTemplate {
@@ -16,49 +14,45 @@ public class SortProductView extends ProductTemplate {
     protected void showBody() {
         boolean flag = true;
         do {
-            System.out.println("What style of sort do you want?");
-            System.out.println("1. Sort by ID:");
-            System.out.println("2. Sort by name:");
-            System.out.println("3. Sort by unit:");
-            System.out.println("4. Sort by entry price:");
-            System.out.println("5. Sort by supplier:");
-            System.out.println("6. Sort by date create:");
-            System.out.println("7. Sort by date update:");
-            System.out.println("0. Exit!");
-
+            menuSort();
             int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
-                    SortProductByIdView sortProductByIdView = new SortProductByIdView();
+                    SortProductByIdAscView sortProductByIdView = new SortProductByIdAscView();
                     break;
                 case 2:
-                    SortProductByNameView sortProductByNameView = new SortProductByNameView();
+                    SortProductByIdDesView sortProductByIdDesView = new SortProductByIdDesView();
                     break;
                 case 3:
-                    comparator = new ComparatorByUnit();
-                    productManagement.sortProduct(comparator);
+                    SortProductByNameAscView sortProductByNameAscView = new SortProductByNameAscView();
                     break;
                 case 4:
-                    comparator = new ComparatorByEntryPrice();
-                    productManagement.sortProduct(comparator);
+                    SortProductByNameDesView sortProductByNameDesView = new SortProductByNameDesView();
                     break;
                 case 5:
-                    comparator = new ComparatorBySupplier();
-                    productManagement.sortProduct(comparator);
+                    SortByDateCreateAscView sortByDateCreateAscView = new SortByDateCreateAscView();
                     break;
                 case 6:
-                    comparator = new ComparatorByDateCreate();
-                    productManagement.sortProduct(comparator);
-                    break;
-                case 7:
-                    comparator = new ComparatorByDateUpdate();
-                    productManagement.sortProduct(comparator);
+                    SortByDateCreateDesView sortByDateCreateDesView = new SortByDateCreateDesView();
                     break;
                 case 0:
                     flag = false;
                     break;
+                default:
+                    System.out.println("Wrong input, choose again!");
+                    break;
             }
         } while (flag);
+    }
+    public void menuSort(){
+        System.out.println("What style of sort do you want?");
+        System.out.println("1. Sort by ID with ascending:");
+        System.out.println("2. Sort by ID with descending:");
+        System.out.println("3. Sort by name with ascending:");
+        System.out.println("4. Sort by name with descending:");
+        System.out.println("5. Sort by date create with ascending:");
+        System.out.println("6. Sort by date create with descending:");
+        System.out.println("0. Exit!");
     }
 }

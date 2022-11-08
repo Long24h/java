@@ -3,14 +3,17 @@ package product.productview.functionview.allsortproductview;
 import product.productview.ProductTemplate;
 import product.productview.functionview.allsort.ComparatorByName;
 
-public class SortProductByNameView extends ProductTemplate {
-    public SortProductByNameView(){
-        showBody();
+import java.util.Collections;
+
+public class SortProductByNameDesView extends ProductTemplate {
+    public SortProductByNameDesView(){
+
     }
     @Override
     protected void showBody() {
         comparator = new ComparatorByName();
-        productManagement.sortProduct(comparator);
+        Collections.sort(productManagement.getProductsList(), comparator);
+        Collections.reverse(productManagement.getProductsList());
         showProduct(productManagement.getProductsList());
     }
 }
