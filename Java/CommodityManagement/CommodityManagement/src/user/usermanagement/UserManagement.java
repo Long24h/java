@@ -9,7 +9,7 @@ import java.util.*;
 import static user.usermanagement.UserRole.ADMIN;
 import static user.usermanagement.UserRole.USER;
 
-public class UserManagement implements UserSearchable {
+public class UserManagement {
     public UserManagement() {
 
     }
@@ -88,86 +88,86 @@ public class UserManagement implements UserSearchable {
         }
         return temp;
     }
-
-    @Override
-    public List searchName(String name) {
-        List<User> sameName = new ArrayList<>();
-        for (User user : userList) {
-            if (user.getFullName().toUpperCase().contains(name.toUpperCase())){
-                sameName.add(user);
-            }
-        }
-        return sameName;
-    }
-
-
-    @Override
-    public User searchUserName(String userName) {
-        User temp = new User();
-        for (User user : userList) {
-            if (user.getUserName().toUpperCase().equals(userName.toUpperCase())){
-                temp = user;
-                break;
-            }
-        }
-        return temp;
-    }
-
-    @Override
-    public List searchPassword(String password) {
-        List<User> samePassword = new ArrayList<>();
-        for (User user : userList) {
-            if (user.getPassWord().toUpperCase().equals(password.toUpperCase())){
-                samePassword.add(user);
-            }
-        }
-        return samePassword;
-    }
-
-    @Override
-    public User searchMobile(int mobile) {
-        User temp = new User();
-        for (User user : userList) {
-            if (user.getMobile() == mobile){
-                temp = user;
-                break;
-            }
-        }
-        return temp;
-    }
-
-    @Override
-    public User searchEmail(String email) {
-        User temp = new User();
-        for (User user : userList) {
-            if (user.getEmail().toUpperCase().equals(email.toUpperCase())){
-                temp = user;
-                break;
-            }
-        }
-        return temp;
-    }
-
-    @Override
-    public List searchAddress(String address) {
-        List<User> sameAddress = new ArrayList<>();
-        for (User user : userList) {
-            if (user.getAddress().toUpperCase().contains(address.toUpperCase())){
-                sameAddress.add(user);
-            }
-        }
-        return sameAddress;
-    }
-
-    @Override
-    public List searchUserRole(UserRole userRole) {
-        List<User> sameRole = new ArrayList<>();
-        for (User user : userList) {
-            if (user.getUserRole().equals(userRole)){
-                sameRole.add(user);
-            }
-        }
-        return sameRole;
-    }
+//
+//    @Override
+//    public List searchName(String name) {
+//        List<User> sameName = new ArrayList<>();
+//        for (User user : userList) {
+//            if (user.getFullName().toUpperCase().contains(name.toUpperCase())){
+//                sameName.add(user);
+//            }
+//        }
+//        return sameName;
+//    }
+//
+//
+//    @Override
+//    public User searchUserName(String userName) {
+//        User temp = new User();
+//        for (User user : userList) {
+//            if (user.getUserName().toUpperCase().equals(userName.toUpperCase())){
+//                temp = user;
+//                break;
+//            }
+//        }
+//        return temp;
+//    }
+//
+//    @Override
+//    public List searchPassword(String password) {
+//        List<User> samePassword = new ArrayList<>();
+//        for (User user : userList) {
+//            if (user.getPassWord().toUpperCase().equals(password.toUpperCase())){
+//                samePassword.add(user);
+//            }
+//        }
+//        return samePassword;
+//    }
+//
+//    @Override
+//    public User searchMobile(int mobile) {
+//        User temp = new User();
+//        for (User user : userList) {
+//            if (user.getMobile() == mobile){
+//                temp = user;
+//                break;
+//            }
+//        }
+//        return temp;
+//    }
+//
+//    @Override
+//    public User searchEmail(String email) {
+//        User temp = new User();
+//        for (User user : userList) {
+//            if (user.getEmail().toUpperCase().equals(email.toUpperCase())){
+//                temp = user;
+//                break;
+//            }
+//        }
+//        return temp;
+//    }
+//
+//    @Override
+//    public List searchAddress(String address) {
+//        List<User> sameAddress = new ArrayList<>();
+//        for (User user : userList) {
+//            if (user.getAddress().toUpperCase().contains(address.toUpperCase())){
+//                sameAddress.add(user);
+//            }
+//        }
+//        return sameAddress;
+//    }
+//
+//    @Override
+//    public List searchUserRole(UserRole userRole) {
+//        List<User> sameRole = new ArrayList<>();
+//        for (User user : userList) {
+//            if (user.getUserRole().equals(userRole)){
+//                sameRole.add(user);
+//            }
+//        }
+//        return sameRole;
+//    }
 
 }

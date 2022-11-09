@@ -99,19 +99,6 @@ public class ProductManagement {
         }
     }
 
-//    public static boolean searchId(int id) throws ArrayIndexOutOfBoundsException {
-//        boolean flag = true;
-//        int count = 0;
-//        for (int i = 0; i < productsList.size(); i++) {
-//            if (productsList.get(i).getId() == id) {
-//                flag = true;
-//            } else if (count == 0 && i == productsList.size() - 1) {
-//                flag = false;
-//            }
-//        }
-//        return flag;
-//    }
-
     public void sortProduct(Comparator<Product> comparator) {
         productsList.sort(comparator);
     }
@@ -123,11 +110,13 @@ public class ProductManagement {
 
     public static Product searchId(int id) {
         Product temp = new Product();
+        int count = 0;
         for (int i = 0; i < getProductsList().size(); i++) {
             if (getProductsList().get(i).getId() == id) {
                 temp = getProductsList().get(i);
+                count++;
                 break;
-            } else {
+            } else if (count == 0 && i == getProductsList().size() - 1){
                 temp = null;
             }
         }

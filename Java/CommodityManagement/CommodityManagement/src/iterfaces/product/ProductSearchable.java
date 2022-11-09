@@ -1,12 +1,23 @@
 package iterfaces.product;
 
 import iterfaces.Searchable;
+import product.Product;
+import product.productmanagement.ProductManagement;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public interface ProductSearchable extends Searchable {
-    List searchInventory(int inventory);
-    List searchEntryPrice(int entryPrice);
-    List searchUnit(String unit);
-    List searchSupplier(String supplier);
+public class ProductSearchable implements Searchable<Product> {
+
+
+    @Override
+    public ArrayList<Product> searchBy(ArrayList<Product> list, int id) {
+        ArrayList<Product> list1 = new ArrayList<>();
+        for (Product product : list) {
+            if (product.getId() == id) {
+                list1.add(product);
+            }
+        }
+        return list1;
+    }
+
 }

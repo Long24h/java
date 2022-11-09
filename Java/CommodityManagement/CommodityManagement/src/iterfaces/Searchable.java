@@ -1,8 +1,9 @@
 package iterfaces;
 
-import java.util.List;
+import product.Product;
 
-public interface Searchable {
-    Object searchId(int id);
-    List searchName(String name);
+import java.util.ArrayList;
+
+public interface Searchable<T> {
+        ArrayList<T> searchBy(ArrayList<T> t, int id);
 }

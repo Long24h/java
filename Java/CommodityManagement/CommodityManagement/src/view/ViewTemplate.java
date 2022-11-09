@@ -3,7 +3,7 @@ package view;
 import java.util.Scanner;
 
 public abstract class ViewTemplate {
-    protected Scanner scanner = new Scanner(System.in);
+    protected static Scanner scanner = new Scanner(System.in);
     public ViewTemplate(){
         showPage();
     }
