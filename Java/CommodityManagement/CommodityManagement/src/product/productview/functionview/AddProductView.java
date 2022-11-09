@@ -12,35 +12,53 @@ public class AddProductView extends ProductTemplate {
 
     @Override
     protected void showBody() {
-        float inventory = 0;
+        double inventory = 0;
+        int entryPrice = 0;
+        boolean flag = false;
 
-            System.out.println("Add new product:");
-            System.out.println("----------------");
-            System.out.println("Enter new product's name:");
-            String name = scanner.nextLine();
+        System.out.println("Add new product:");
+        System.out.println("----------------");
+        System.out.println("Enter new product's name:");
+        String name = scanner.nextLine();
 
-                try{
-                    System.out.println("Enter new product's inventory:");
-                    inventory = Float.parseFloat(scanner.nextLine());
-                }catch(NumberFormatException numberFormatException){
-                    System.err.println("You must enter a whole number!");
-                }
+        do {
+            try {
+                System.out.println("Enter new product's inventory:");
+                inventory = Double.parseDouble(scanner.nextLine());
+                flag = false;
+            } catch (Exception e) {
+                System.err.println("You must enter a number!");
+                flag = true;
+                scanner.reset();
+            }
+        } while (flag);
 
-            System.out.println("Enter new product's unit:");
-            String unit = scanner.nextLine();
+        String unit;
+        System.out.println("Enter new product's unit:");
+        unit = scanner.nextLine();
 
-            System.out.println("Enter new product's entry price:");
-            int entryPrice = Integer.parseInt(scanner.nextLine());
+        do {
+            try {
+                System.out.println("Enter new product's entry price:");
+                entryPrice = Integer.parseInt(scanner.nextLine());
+                flag = false;
+            } catch (NumberFormatException numberFormatException) {
+                System.err.println("Wrong input, re-enter please!");
+                scanner.reset();
+                flag = true;
+            }
+        } while (flag);
 
-            System.out.println("Enter new product's supplier:");
-            String supplier = scanner.nextLine();
 
-            Date dateCreate = new Date();
-            Date dateUpdate = new Date();
+        System.out.println("Enter new product's supplier:");
+        String supplier = scanner.nextLine();
 
-            Product newProduct = new Product(name, inventory, unit, entryPrice, supplier, dateCreate, dateUpdate);
-            ProductManagement.addProduct(newProduct);
+        Date dateCreate = new Date();
+        Date dateUpdate = new Date();
 
-            showProduct(productManagement.getProductsList());
-         }
+        Product newProduct = new Product(name, inventory, unit, entryPrice, supplier, dateCreate, dateUpdate);
+        ProductManagement.addProduct(newProduct);
+
+        showProduct(productManagement.getProductsList());
+    }
 }

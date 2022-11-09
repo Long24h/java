@@ -7,7 +7,7 @@ import java.util.Date;
 public class Product {
     private long id;
     private String name;
-    private float inventory;
+    private double inventory;
     private String unit;
     private int entryPrice;
     private String supplier;
@@ -27,11 +27,11 @@ public class Product {
         this.name = name;
     }
 
-    public float getInventory() {
+    public double getInventory() {
         return inventory;
     }
 
-    public void setInventory(float inventory) {
+    public void setInventory(double inventory) {
         this.inventory = inventory;
     }
 
@@ -78,7 +78,7 @@ public class Product {
 
     }
 
-    public Product(String name, float inventory, String unit, int entryPrice, String supplier, Date dateCreate, Date dateUpdate) {
+    public Product(String name, double inventory, String unit, int entryPrice, String supplier, Date dateCreate, Date dateUpdate) {
         this.id = System.currentTimeMillis()%100000;
         this.name = name;
         this.inventory = inventory;
