@@ -1,19 +1,19 @@
 import myinterfaces.Comparable;
+
 import java.util.*;
 
 
 public class Main {
+
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception{
         System.out.println("Hello world!");
 
-        ReadFileExample readFileExample = new ReadFileExample();
-        readFileExample.readFileTest();
 
-//        TestFile testFile = new TestFile();
-//        testFile.makeFile();
-//        testFile.writeDataWithAutoClose();
+        CopyFileTest copyFileTest = new CopyFileTest();
+        String path = copyFileTest.createFile();
+        copyFileTest.copyFile(path);
 
 //        CalculationExample cal = new CalculationExample();
 //        cal.calc();

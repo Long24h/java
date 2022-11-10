@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayListPractice<E> {
     //    private int size = 0;
@@ -126,7 +127,13 @@ public class ArrayListPractice<E> {
         return str;
     }
 
-
-    public static void main(String[] args) {
+    public int findMax(List<Integer> arr) {
+        int max = arr.get(0);
+        for (int i = 0; i < arr.size(); i++) {
+            if (max < arr.get(i)) {
+                max = arr.get(i);
+            }
+        }
+        return max;
     }
 }
