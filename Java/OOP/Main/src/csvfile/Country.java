@@ -1,16 +1,16 @@
 package csvfile;
 
-public class CsvFile {
+public class Country {
     private int id;
     private String nameCountry;
     private String codeCountry;
 
-    public CsvFile(int id, String nameCountry, String codeCountry) {
+    public Country(int id, String nameCountry, String codeCountry) {
         this.id = id;
         this.nameCountry = nameCountry;
         this.codeCountry = codeCountry;
     }
-    public CsvFile(){
+    public Country(){
 
     }
 
