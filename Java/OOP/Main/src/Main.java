@@ -1,4 +1,6 @@
 import myinterfaces.Comparable;
+import thread.MyThread;
+import thread.RunnableDemo;
 
 import java.util.*;
 
@@ -10,10 +12,26 @@ public class Main {
     public static void main(String[] args) throws Exception{
         System.out.println("Hello world!");
 
+        MyThread myThread = new MyThread();
+        myThread.start();
 
-        CopyFileTest copyFileTest = new CopyFileTest();
-        String path = copyFileTest.createFile();
-        copyFileTest.copyFile(path);
+        Thread thread = new Thread(()->{
+            System.out.println("15p GG");
+        });
+        thread.start();
+        System.out.println(thread.getId());
+
+//        RunnableDemo r1 = new RunnableDemo("thread 1");
+//        r1.run();
+//        r1.start();
+//
+//        RunnableDemo r2 = new RunnableDemo("aloooo");
+//        r2.start();
+
+
+//        CopyFileTest copyFileTest = new CopyFileTest();
+//        String path = copyFileTest.createFile();
+//        copyFileTest.copyFile(path);
 
 //        CalculationExample cal = new CalculationExample();
 //        cal.calc();
