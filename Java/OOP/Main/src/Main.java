@@ -12,17 +12,11 @@ public class Main {
     public static void main(String[] args) throws Exception{
         System.out.println("Hello world!");
 
-        MyThread myThread = new MyThread();
-        myThread.start();
-
-        Thread thread = new Thread(()->{
-            System.out.println("15p GG");
-        });
-        thread.start();
-        System.out.println(thread.getId());
+//        MyThread myThread = new MyThread();
+//        myThread.start();
+//        System.out.println("Good morning");
 
 //        RunnableDemo r1 = new RunnableDemo("thread 1");
-//        r1.run();
 //        r1.start();
 //
 //        RunnableDemo r2 = new RunnableDemo("aloooo");

@@ -1,6 +1,6 @@
 package thread;
 
-public class RunnableDemo extends Thread implements Runnable{
+public class RunnableDemo implements Runnable{
     private Thread thread;
     private final String threadName;
 
@@ -14,7 +14,7 @@ public class RunnableDemo extends Thread implements Runnable{
         try{
             for (int i = 5; i > 0; i--) {
                 System.out.println("Thread " + threadName + ", " + i);
-                Thread.sleep(50);
+                Thread.sleep(2000);
             }
         }catch(InterruptedException interruptedException){
             System.out.println("thread " + threadName + " interruptedException");;
@@ -25,7 +25,7 @@ public class RunnableDemo extends Thread implements Runnable{
     public void start() {
         System.out.println("Starting " + threadName);
         if (thread == null) {
-            thread = new Thread(this.thread, threadName);
+            thread = new Thread(this, threadName);
             thread.start();
         }
     }
