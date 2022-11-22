@@ -16,7 +16,7 @@ public class MissingNumber {
     }
 
     public static void main(String[] args) {
-        int[] num = {13, 93, 38 , 9, 73, 11, 28};
+        int[] num = {2, 13, 93, 38, 9, 73, 11, 28};
         findMissing(num);
     }
 }

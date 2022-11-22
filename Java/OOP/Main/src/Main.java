@@ -11,6 +11,21 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
         System.out.println("Hello world!");
+        Queue<String> queue = new LinkedList<>();
+        queue.add("heri");
+        queue.add("neirnm");
+        queue.add("nrub");
+        System.out.println(queue);
+        queue.remove();
+        System.out.println(queue);
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(52);
+        stack.push(35);
+        stack.push(98);
+        System.out.println(stack);
+        stack.pop();
+        System.out.println(stack);
 
 //        MyThread myThread = new MyThread();
 //        myThread.start();
