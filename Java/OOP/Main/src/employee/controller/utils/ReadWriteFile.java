@@ -9,7 +9,7 @@ public class ReadWriteFile {
         try {
             PrintWriter pw = new PrintWriter(filePath);
             for (T item : list) {
-                pw.println(item);
+                pw.println(item.toString());
             }
             pw.close();
         } catch (FileNotFoundException f) {

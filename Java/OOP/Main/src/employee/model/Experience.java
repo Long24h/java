@@ -50,6 +50,12 @@ public class Experience extends Employee {
                 getType(), getExpInYear(), getProSkill());
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s", getId(), getFullName(), getDob(), getPhone(), getEmail(),
+                getType(), getExpInYear(), getProSkill());
+    }
+
     public static Experience parseExp(String raw) {
         String[] fields = raw.split(",");
 
@@ -58,7 +64,7 @@ public class Experience extends Employee {
         String dob = fields[2];
         String phone = fields[3];
         String email = fields[4];
-        Type type = Type.valueOf(Type.parseType(fields[5]));
+        Type type = Type.parseType(fields[5]);
         int expInYear = Integer.parseInt(fields[6]);
         String proSkill = fields[7];
 

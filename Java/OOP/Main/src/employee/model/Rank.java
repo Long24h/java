@@ -15,15 +15,14 @@ public enum Rank {
         this.rank = rank;
     }
 
-    private Rank(String rank) {
+    Rank(String rank) {
         this.rank = rank;
     }
 
-    public String parseRank(String rank) {
-        Rank[] ranks = values();
-        for (Rank item : ranks) {
-            if (item.getRank().equals(rank)) {
-                return rank;
+    public static Rank parseRank(String rank) {
+        for (Rank item : values()) {
+            if (item.getRank().equalsIgnoreCase(rank)) {
+                return item;
             }
         }
         throw new IllegalArgumentException("Invalid rank!");

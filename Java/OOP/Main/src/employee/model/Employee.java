@@ -97,7 +97,7 @@ public abstract class Employee {
         this.totalEmployee = totalEmployee;
     }
     public Employee(String fullName, String dob, String phone, String email, Type type) {
-        this.id = (int)System.currentTimeMillis()%1000000;
+        this.id = System.currentTimeMillis()%1000000;
         this.fullName = fullName;
         this.dob = dob;
         this.phone = phone;

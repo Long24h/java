@@ -5,7 +5,7 @@ import employee.model.Employee;
 import java.util.List;
 
 public class EmployeeControl {
-    public List<Employee> employeeList;
+    public List<Employee> employeeList = ExperienceControl.findAll().addAll(FresherControl.findAll());
 
     public void addEmployee(Employee employee) {
         employeeList.add(employee);

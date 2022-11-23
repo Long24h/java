@@ -6,7 +6,7 @@ public enum Type {
     INTERN("INTERN");
     private String type;
 
-    private Type(String type) {
+    Type(String type) {
         this.type = type;
     }
 
@@ -18,11 +18,10 @@ public enum Type {
         this.type = type;
     }
 
-    public static String parseType(String type) {
-        Type[] types = values();
-        for (Type item : types) {
-            if (item.getType().equals(type)) {
-                return type;
+    public static Type parseType(String type) {
+        for (Type item : values()) {
+            if (item.getType().equalsIgnoreCase(type)) {
+                return item;
             }
         }
         throw new IllegalArgumentException("Invalid type enums!");
